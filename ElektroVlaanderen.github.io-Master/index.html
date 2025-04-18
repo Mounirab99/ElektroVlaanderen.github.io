@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keuzemenu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .keuze-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .keuze-container a {
+            text-decoration: none;
+            background-color: #ffffff;
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+        }
+
+        .keuze-container a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            border-color: #3498db;
+            color: #3498db;
+        }
+
+        @media (max-width: 600px) {
+            .keuze-container {
+                flex-direction: column;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Kies een onderwerp</h1>
+        <div class="keuze-container">
+            <a href="3D.html">3D-modellen</a>
+            <a href="elektrovlaanderen-html/elek.html">Elektriciteit</a>
+        </div>
+    </main>
+</body>
+</html>
