@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: $name <$email>";
 
     if(mail($to, $subject, $email_content, $headers)) {
-        header("Location: bedankt.html"); // Stuur door naar bedankpagina
+        header("Location: contact.html"); // Stuur door naar bedankpagina
         exit;
     } else {
         http_response_code(500);
