@@ -28,8 +28,11 @@
         <h2>Stuur ons een bericht</h2>
         <br><br>
         <form class="modern-form" 
-              action=""https://formspree.io/f/xanoyljw"" 
+              action="https://formspree.io/f/xanoyljw" 
               method="POST">
+            <input type="hidden" name="_subject" value="Nieuw contactformulierbericht">
+            <input type="hidden" name="_language" value="nl">
+            
             <div class="form-group">
                 <input type="text" id="name" name="name" required>
                 <label for="name">Volledige naam</label>
@@ -61,7 +64,7 @@
             <div class="contact-info-card">
                 <i class="fas fa-phone"></i>
                 <h3>Telefoon</h3>
-                <p>+32 476 61 10 99</p>
+                <p>+32 479 61 10 99</p>
                 <p>Bereikbaar: Ma-Vrij 9u-17u</p>
             </div>
             
@@ -91,8 +94,8 @@
             <h4 class="footer-heading">Snelle links</h4>
             <ul class="footer-links">
                 <li><a href="3D.html" class="footer-link">Home</a></li>
-                <li><a href="#" class="footer-link">360°/VR</a></li>
-                <li><a href="#" class="footer-link">Foto/Video</a></li>
+                <li><a href="360.html" class="footer-link">360°/VR</a></li>
+                <li><a href="fotvi.html" class="footer-link">Foto/Video</a></li>
                 <li><a href="#" class="footer-link">Projecten</a></li>
                 <li><a href="contact.html" class="footer-link">Contact</a></li>
             </ul>
@@ -101,8 +104,8 @@
         <div class="footer-section">
             <h4 class="footer-heading">Contact</h4>
             <div class="contact-info">
-                <p class="footer-text"><i class="fas fa-map-marker-alt"></i> vijfstraten 163, 9100 Sint-Niklaas</p>
-                <p class="footer-text"><i class="fas fa-phone"></i> +32 476 61 10 99</p>
+                <p class="footer-text"><i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100 Sint-Niklaas</p>
+                <p class="footer-text"><i class="fas fa-phone"></i> +32 479 61 10 99</p>
                 <p class="footer-text"><i class="fas fa-envelope"></i> info@elektrovlaanderen.be</p>
             </div>
         </div>
@@ -117,7 +120,7 @@
     </div>
   </footer>
 
-  <!-- Burger menu-->
+  <!-- Burger menu script -->
   <script>
       const nav = document.querySelector(".nav");
       const navOpenBtn = document.querySelector(".navOpenBtn");
