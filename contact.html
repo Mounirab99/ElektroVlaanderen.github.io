@@ -29,10 +29,15 @@
         <br><br>
         <form class="modern-form" 
               action="https://formspree.io/f/xanoyljw" 
-              method="POST">
-            <input type="hidden" name="_subject" value="Nieuw contactformulierbericht">
-            <input type="hidden" name="_language" value="nl">
+              method="POST"
+              onsubmit="return validateForm()">
             
+            <!-- Formspree configuratievelden -->
+            <input type="hidden" name="_subject" value="Nieuw contactformulier - Elektro Vlaanderen">
+            <input type="hidden" name="_language" value="nl">
+            <input type="text" name="_gotcha" style="display:none">
+            
+            <!-- Formuliervelden -->
             <div class="form-group">
                 <input type="text" id="name" name="name" required>
                 <label for="name">Volledige naam</label>
@@ -57,6 +62,11 @@
                 <i class="uil uil-message"></i> Verstuur bericht
             </button>
         </form>
+        
+        <!-- Formspree disclaimer -->
+        <p class="form-disclaimer" style="margin-top:20px; font-size:0.9em; color:#666;">
+            Dit formulier wordt beveiligd door <a href="https://formspree.io" target="_blank" style="color:#666;">Formspree</a>
+        </p>
     </div>
     
     <div class="contact-container">
@@ -64,7 +74,7 @@
             <div class="contact-info-card">
                 <i class="fas fa-phone"></i>
                 <h3>Telefoon</h3>
-                <p>+32 479 61 10 99</p>
+                <p>+32 476 61 10 99</p>
                 <p>Bereikbaar: Ma-Vrij 9u-17u</p>
             </div>
             
@@ -105,7 +115,7 @@
             <h4 class="footer-heading">Contact</h4>
             <div class="contact-info">
                 <p class="footer-text"><i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100 Sint-Niklaas</p>
-                <p class="footer-text"><i class="fas fa-phone"></i> +32 479 61 10 99</p>
+                <p class="footer-text"><i class="fas fa-phone"></i> +32 476 61 10 99</p>
                 <p class="footer-text"><i class="fas fa-envelope"></i> info@elektrovlaanderen.be</p>
             </div>
         </div>
@@ -122,6 +132,7 @@
 
   <!-- Burger menu script -->
   <script>
+      // Burger menu functionaliteit
       const nav = document.querySelector(".nav");
       const navOpenBtn = document.querySelector(".navOpenBtn");
       const navCloseBtn = document.querySelector(".navCloseBtn");
@@ -140,6 +151,16 @@
               nav.classList.remove("openNav");
           }
       });
+
+      // Eenvoudige validatie
+      function validateForm() {
+          const email = document.getElementById("email").value;
+          if (!email.includes("@")) {
+              alert("Gelieve een geldig e-mailadres in te vullen");
+              return false;
+          }
+          return true;
+      }
   </script>
 </body>
 </html>
