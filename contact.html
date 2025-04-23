@@ -23,38 +23,37 @@
   </nav>
 </header>
 
-    <section class="contact-main-section">
-
-
-            <div class="contact-form-wrapper">
-                <h2>Stuur ons een bericht</h2>
-                <br><br>
-                <form class="modern-form" action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Volledige naam</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">E-mailadres</label>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone">
-                        <label for="phone">Telefoonnummer (optioneel)</label>
-                    </div>
-
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Jouw bericht</label>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Verstuur bericht
-                    </button>
-                </form>
+  <section class="contact-main-section">
+    <div class="contact-form-wrapper">
+        <h2>Stuur ons een bericht</h2>
+        <br><br>
+        <form class="modern-form" action="send_email.php" method="POST">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required>
+                <label for="name">Volledige naam</label>
             </div>
+            
+            <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">E-mailadres</label>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="phone" name="phone">
+                <label for="phone">Telefoonnummer (optioneel)</label>
+            </div>
+
+            <div class="form-group">
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="message">Jouw bericht</label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Verstuur bericht
+            </button>
+        </form>
+    </div>
+</section>
             <div class="contact-container">
                 <div class="contact-info-cards">
 
