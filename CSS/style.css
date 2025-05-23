@@ -43,7 +43,7 @@ a {
 .nav .logo {
   display: flex;
   align-items: center;
-  font-size: 66px;
+  font-size: 33px;
   font-weight: 500;
   color: #000000;
   transition: font-size 0.3s ease, color 0.3s ease;
@@ -55,7 +55,7 @@ a {
 }
 
 .logo-image {
-  height: 112px;
+  height: 224px;
   width: auto;
   max-height: 224px;
   margin-right: 10px;
