@@ -43,7 +43,7 @@ a {
 .nav .logo {
   display: flex;
   align-items: center;
-  font-size: 112px;
+  font-size: 66px;
   font-weight: 500;
   color: #000000;
   transition: font-size 0.3s ease, color 0.3s ease;
