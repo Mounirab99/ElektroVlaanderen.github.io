@@ -55,9 +55,9 @@ a {
 }
 
 .logo-image {
-  height: 28px;
+  height: 112px;
   width: auto;
-  max-height: 32px;
+  max-height: 112px;
   margin-right: 10px;
   object-fit: contain;
   display: inline-block;
