@@ -782,3 +782,90 @@ a {
     font-size: 1.75rem;
   }
 }
+/* --- CLIENTS / REFERENTIES --- */
+.clients-section {
+  padding: 60px 20px;
+  background: #ffffff;
+  margin-top: 20px;
+}
+
+.clients-header {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.clients-header h2 {
+  color: #2B6777;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.clients-header p {
+  color: #4a4a4a;
+  opacity: 0.9;
+}
+
+.clients-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.client-card {
+  background: #f0faff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.client-logo-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  display: grid;
+  place-items: center;
+}
+
+.client-logo {
+  max-width: 90%;
+  max-height: 70%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.client-card:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(43,103,119,0.12);
+}
+.client-card:hover .client-logo {
+  filter: none;
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .clients-grid { grid-template-columns: repeat(5, 1fr); }
+}
+@media (max-width: 992px) {
+  .clients-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+  .clients-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 380px) {
+  .clients-grid { grid-template-columns: 1fr; }
+}
+
