@@ -12,27 +12,36 @@
   <link rel="stylesheet" href="CSS/style.css" />
 
   <style>
-    /* Extra, alleen voor deze pagina */
-    .uc-hero {
-      min-height: calc(100vh - 120px);
-      padding: 120px 20px 60px; /* ruimte voor vaste navbar */
-      display: grid;
-      place-items: center;
-      background: #000; /* zwarte balk zoals je hero */
-      position: relative;
-      overflow: hidden;
-    }
-    .uc-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 28px 24px;
-      max-width: 720px;
-      width: 92vw;
-      text-align: center;
-      color: #fff;
-      backdrop-filter: blur(6px);
-    }
+/* Zelfde look/feel als je normale hero */
+.uc-hero {
+  height: 500px;            /* zelfde hoogte als .hero-section */
+  margin-top: 60px;         /* ruimte voor je fixed navbar (zoals .hero-section) */
+  padding: 0 20px;          /* alleen horizontale padding */
+  background: #000;         /* zwarte balk */
+  position: relative;
+  overflow: hidden;
+
+  display: flex;            /* inhoud centreren */
+  align-items: center;
+  justify-content: center;
+}
+
+.uc-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 28px 24px;
+  max-width: 720px;
+  width: 92vw;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+
+/* Zelfde responsiviteit als je gewone hero */
+@media (max-width: 480px) {
+  .uc-hero { height: 400px; }  /* matcht jouw mobile-hero */
+}
     .uc-emoji {
       font-size: 3rem;
       display: inline-block;
