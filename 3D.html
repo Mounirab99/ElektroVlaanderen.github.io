@@ -41,10 +41,18 @@
     </div>
 
     <section class="hero-section">
-        <video class="hero-background" autoplay loop muted>
-            <source src="Assets/Movies/267A6457-812F-42EC-8ACA-43AB001D1C7F.mp4" type="video/mp4">
-            Je browser ondersteunt deze video niet.
-        </video>
+<video
+  class="hero-background"
+  autoplay
+  loop
+  muted
+  playsinline
+  webkit-playsinline
+  preload="auto"
+  poster="Assets/Movies/placeholder.jpg"  <!-- optioneel -->
+>
+  <source src="Assets/Movies/267A6457-812F-42EC-8ACA-43AB001D1C7F.mp4" type="video/mp4">
+</video>
     
 
     </section>
@@ -270,8 +278,33 @@ L.marker([51.178346, 4.154797]).addTo(map)
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </footer>
+    <script>
+  (function() {
+    const v = document.querySelector('.hero-background');
+    if (!v) return;
+
+    v.muted = true;
+    v.setAttribute('muted','');
+    v.setAttribute('playsinline','');
+    v.setAttribute('webkit-playsinline','');
+
+    const tryPlay = () => v.play().catch(() => {});
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      tryPlay();
+    } else {
+      document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
+    }
+
+    window.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) tryPlay();
+    });
+  })();
+</script>
 </body>
 </html>
+
 
 
 
