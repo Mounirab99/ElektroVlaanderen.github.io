@@ -811,8 +811,10 @@ a {
   margin: 0 auto;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  justify-content: center; /* centreert de grid als er minder kolommen zijn */
 }
+
 
 .client-card {
   background: #f0faff;
@@ -868,4 +870,5 @@ a {
 @media (max-width: 380px) {
   .clients-grid { grid-template-columns: 1fr; }
 }
+
 
