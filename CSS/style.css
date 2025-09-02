@@ -126,7 +126,7 @@ a {
   display: block;
 }
 
-/* Pijltje bij Services */
+/* Pijltje bij Services (Font Awesome) */
 .nav .nav-links li.has-submenu > a::after {
   content: "\f078"; /* fa-chevron-down */
   font-family: "Font Awesome 5 Free";
@@ -138,6 +138,7 @@ a {
   transform: translateY(-1px);
 }
 
+/* Als submenu open is (mobiel), roteer pijltje */
 .nav .nav-links li.has-submenu.open > a::after {
   transform: rotate(180deg) translateY(1px);
 }
@@ -714,7 +715,7 @@ a {
     font-weight: 500;
   }
 
-  /* Submenu mobiel */
+  /* Submenu mobiel: inline i.p.v. zwevend */
   .nav .nav-links .submenu {
     position: static;
     background: transparent;
@@ -725,9 +726,59 @@ a {
 
   .nav .nav-links .submenu li a {
     color: #ffffff;
-    padding: 8px 0 8px 14px;
+    padding: 8px 0 8px 14px; /* inspringing */
     opacity: 0.95;
   }
 
   .nav .nav-links .submenu li a:hover {
-    background: rgba(255,255,255,0.08
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+  }
+
+  /* Alleen tonen als parent .open heeft (JS toggle) */
+  .nav .nav-links li.has-submenu:not(.open) > .submenu {
+    display: none !important;
+  }
+  .nav .nav-links li.has-submenu.open > .submenu {
+    display: block !important;
+  }
+
+  .square-section,
+  .video-frame-container,
+  .matterport-container,
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-form-wrapper,
+  .contact-info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 400px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .square-title {
+    font-size: 1.25rem;
+  }
+
+  .square-text {
+    font-size: 0.9rem;
+  }
+
+  .video-content h2,
+  .matterport-content h2 {
+    font-size: 1.75rem;
+  }
+}
