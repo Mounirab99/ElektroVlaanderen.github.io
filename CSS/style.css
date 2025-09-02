@@ -870,5 +870,40 @@ a {
 @media (max-width: 380px) {
   .clients-grid { grid-template-columns: 1fr; }
 }
+/* --- Hero video: kleiner & gecentreerd in zwarte balk --- */
+.hero-section {
+  height: 500px;              /* mag je aanpassen (bijv. 420px) */
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overschrijf de huidige .hero-background-regels */
+.hero-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* grootte van de video: pas aan naar smaak */
+  height: 75%;                /* maak kleiner/groter: bv. 65%–85% */
+  width: auto;
+
+  /* behoud aspect ratio, geen croppen */
+  object-fit: contain;
+
+  /* optioneel */
+  max-width: 90vw;            /* tegen doorschieten op kleine schermen */
+  max-height: 90%;            /* extra safety */
+  pointer-events: none;       /* niet aanklikbaar */
+  z-index: 1;
+}
+
+/* Zorg dat de tekstlaag erboven blijft */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
 
 
