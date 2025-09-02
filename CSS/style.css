@@ -886,7 +886,7 @@ a {
   transform: translate(-50%, -50%);
 
   /* grootte van de video: pas aan naar smaak */
-  height: 150%;                /* maak kleiner/groter: bv. 65%–85% */
+  height: 250%;                /* maak kleiner/groter: bv. 65%–85% */
   width: auto;
 
   /* behoud aspect ratio, geen croppen */
@@ -904,6 +904,7 @@ a {
   position: relative;
   z-index: 2;
 }
+
 
 
 
