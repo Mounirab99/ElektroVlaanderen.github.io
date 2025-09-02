@@ -9,21 +9,32 @@
 </head>
 <body>
   <header>
-    <nav class="nav">
-        <i class="uil uil-bars navOpenBtn"></i>
-        <a href="3D.html" class="logo">
-  <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image">
-  
-</a>
-        <ul class="nav-links">
-            <i class="uil uil-times navCloseBtn"></i>
-            <li><a href="3D.html">Home</a></li>
-            <li><a href="360.html">Services</a></li>
-            <li><a href="fotvi.html">Foto/video</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        
-    </nav>
+   <nav class="nav">
+  <i class="uil uil-bars navOpenBtn"></i>
+  <a href="3D.html" class="logo">
+    <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image">
+  </a>
+  <ul class="nav-links">
+    <i class="uil uil-times navCloseBtn"></i>
+    <li><a href="3D.html">Home</a></li>
+    
+    <!-- Services met submenu -->
+    <li class="has-submenu">
+      <a href="360.html">Services</a>
+      <ul class="submenu">
+        <li><a href="#">Photography</a></li>
+        <li><a href="#">Drone foto's &amp; Video's</a></li>
+        <li><a href="#">3D Matterport</a></li>
+        <li><a href="#">Video Tours</a></li>
+        <li><a href="#">Vloerplannen</a></li>
+        <li><a href="#">FPV Aerial Videos</a></li>
+      </ul>
+    </li>
+    
+    <li><a href="fotvi.html">Foto/Video</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 </header>
     <main>
 
@@ -265,4 +276,5 @@ L.marker([51.178346, 4.154797]).addTo(map)
     </footer>
 </body>
 </html>
+
 
