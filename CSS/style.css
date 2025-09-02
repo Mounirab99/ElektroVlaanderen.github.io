@@ -912,6 +912,30 @@ a {
     max-width: 100vw;
   }
 }
+/* Welkomsectie */
+.welcome-section {
+  padding: 60px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.welcome-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+  color: #2B6777;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+}
+
 
 
 
