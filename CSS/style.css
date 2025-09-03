@@ -280,4 +280,97 @@ a { color: #000; text-decoration: none; }
   .square-text { font-size: .9rem; }
   .video-content h2, .matterport-content h2 { font-size: 1.75rem; }
 }
+/* === PRO3 INTRO === */
+.pro3-section { padding: 60px 20px; background: #fff; }
+.pro3-header { max-width: 1200px; margin: 0 auto 24px; text-align: center; }
+.pro3-header h2 { color: #2B6777; font-size: 2rem; margin-bottom: 8px; }
+.pro3-header p { color: #4a4a4a; opacity: .95; }
+
+.pro3-features {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.pro3-feature {
+  background: #f0faff; border-radius: 12px; padding: 18px;
+  text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.pro3-feature:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(43,103,119,.12); }
+.pro3-feature i { font-size: 1.6rem; color: #2B6777; margin-bottom: 8px; display: block; }
+.pro3-feature h3 { color: #2B6777; font-size: 1.1rem; margin-bottom: 6px; }
+.pro3-feature p { color: #4a4a4a; font-size: .98rem; }
+
+/* === TOURS (hergebruik uit eerdere grid) === */
+.tours-section { padding: 60px 20px; background: #fff; }
+.tours-header { max-width: 1200px; margin: 0 auto 24px; text-align: center; }
+.tours-header h2 { color: #2B6777; font-size: 2rem; margin-bottom: 8px; }
+.tours-header p { color: #4a4a4a; opacity: .9; }
+
+.tours-grid {
+  max-width: 1200px; margin: 0 auto; display: grid; gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.tour-card {
+  background: #f0faff; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06); display: flex; flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.tour-card:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(43,103,119,.12); }
+
+.tour-thumb { position: relative; display: block; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.tour-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(.92); transition: transform .35s ease, filter .2s ease; }
+.tour-card:hover .tour-thumb img { transform: scale(1.03); filter: brightness(1); }
+.play-badge {
+  position: absolute; left: 12px; bottom: 12px; background: rgba(0,0,0,.6);
+  color: #fff; border-radius: 999px; padding: 10px 12px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: .95rem; line-height: 1;
+}
+.tour-body { padding: 16px 16px 18px; display: grid; gap: 6px; }
+.tour-title { font-size: 1.05rem; color: #2B6777; }
+.tour-meta { color: #4a4a4a; font-size: .95rem; opacity: .9; }
+.tour-cta {
+  margin-top: 6px; display: inline-block; width: fit-content;
+  padding: 10px 14px; background: #2B6777; color: #fff; border-radius: 8px;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.tour-cta:hover { background: #52ab98; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(43,103,119,.22); }
+
+/* === WERKWIJZE === */
+.steps-section { padding: 60px 20px; background: #f8fcff; }
+.steps-header { max-width: 1200px; margin: 0 auto 24px; text-align: center; }
+.steps-header h2 { color: #2B6777; font-size: 2rem; margin-bottom: 8px; }
+.steps { max-width: 1000px; margin: 0 auto; list-style: none; display: grid; gap: 16px; }
+.steps li {
+  background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 12px; padding: 16px 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+}
+.steps h3 { color: #2B6777; font-size: 1.05rem; margin-bottom: 6px; }
+.steps p { color: #4a4a4a; }
+
+/* === PRIJZEN (je gebruikt dit al; hergebruikt) === */
+.pricing-section { padding: 60px 20px; background: #fff; }
+
+/* === SPECS === */
+.specs-section { padding: 60px 20px; background: #fff; }
+.specs-header { max-width: 1200px; margin: 0 auto 16px; text-align: center; }
+.specs-header h2 { color: #2B6777; font-size: 2rem; margin-bottom: 8px; }
+.specs-list { max-width: 900px; margin: 0 auto; color: #4a4a4a; line-height: 1.8; }
+.specs-list li { margin: 6px 0; }
+
+/* === FAQ === */
+.faq-section { padding: 60px 20px; background: #f8fcff; }
+.faq-header { max-width: 1200px; margin: 0 auto 16px; text-align: center; }
+.faq-header h2 { color: #2B6777; font-size: 2rem; margin-bottom: 8px; }
+.faq-item {
+  max-width: 900px; margin: 8px auto; background: #fff; border: 1px solid rgba(0,0,0,.06);
+  border-radius: 10px; padding: 14px 16px; box-shadow: 0 4px 10px rgba(0,0,0,.04);
+}
+.faq-item summary { cursor: pointer; font-weight: 600; color: #2B6777; }
+.faq-item p { color: #4a4a4a; margin-top: 8px; }
+
+/* === CTA EINDE === */
+.cta-final { padding: 60px 20px; background: #ffffff; text-align: center; }
+.cta-final h2 { color: #2B6777; margin-bottom: 14px; }
+
 
