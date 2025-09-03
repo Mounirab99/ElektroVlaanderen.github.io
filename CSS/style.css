@@ -373,3 +373,24 @@ a { color: #000; text-decoration: none; }
 .cta-final { padding: 60px 20px; background: #ffffff; text-align: center; }
 .cta-final h2 { color: #2B6777; margin-bottom: 14px; }
 
+/* --- OVERRIDES: Hero GIF groter --- */
+.hero-section { height: 560px; }            /* optioneel: iets hogere balk */
+.hero-gif {
+  position: absolute;
+  z-index: 1;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  height: 85%;           /* schaal op hoogte van de balk */
+  width: auto;           /* behoud verhoudingen */
+  opacity: 0.95;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .hero-section { height: 460px; }
+  .hero-gif { height: 78%; }
+}
+@media (max-width: 480px) {
+  .hero-section { height: 420px; }
+  .hero-gif { height: 72%; }
+}
+
