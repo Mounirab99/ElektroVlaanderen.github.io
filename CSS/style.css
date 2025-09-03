@@ -1,72 +1,97 @@
-/* === PRIJZEN – verbeterde kaarten === */
-.pricing-section { padding: 70px 20px; background: #f8fcff; }
-.pricing-header { max-width: 1200px; margin: 0 auto 28px; text-align: center; }
-.pricing-header h2 { color: #2B6777; font-size: 2rem; margin-bottom: 8px; }
-.pricing-header p { color: #4a4a4a; opacity: .9; }
-
-.pricing-grid {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; gap: 22px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  align-items: stretch;
-}
-
-.price-card {
-  background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.06);
-  display: grid; grid-template-rows: auto 1fr; overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(43,103,119,.12); border-color: rgba(43,103,119,.25); }
-
-.price-head {
-  background: linear-gradient(180deg, #ffffff 0%, #f3fbff 100%);
-  padding: 18px 20px;
-  border-bottom: 1px solid rgba(0,0,0,.06);
+/* HERO */
+.hero-section {
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  margin-top: 60px;
+  overflow: hidden;
   text-align: center;
 }
-.price-title { color: #2B6777; font-size: 1.15rem; font-weight: 600; }
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 20px;
+}
+.hero-gif {
+  position: absolute;
+  z-index: 1;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(60vw, 520px);
+  height: auto;
+  opacity: 0.95;
+  pointer-events: none;
+}
+@media (max-width:768px) { .hero-gif{ width:min(70vw,420px);} }
+@media (max-width:480px) { .hero-gif{ width:min(80vw,360px);} }
 
-.price-badge {
-  position: absolute; margin: 10px 0 0 10px;
-  background: #2B6777; color: #fff; font-size: .8rem; font-weight: 600;
-  padding: 6px 10px; border-radius: 999px; z-index: 1; box-shadow: 0 6px 14px rgba(43,103,119,.25);
+/* PRO3 FEATURES */
+.pro3-section { padding: 60px 20px; background: #fff; }
+.pro3-header { max-width: 900px; margin:0 auto 30px; text-align: center; }
+.pro3-features {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
 }
-.price-card.featured { border: 2px solid #2B6777; box-shadow: 0 16px 38px rgba(43,103,119,.18); }
-.price-card.featured .price-head { background: linear-gradient(180deg, #e9f7fb 0%, #ffffff 100%); }
+.pro3-feature {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f0faff;
+}
+.pro3-feature i { font-size: 2rem; color:#2B6777; margin-bottom: 10px; }
 
-.price-body { padding: 18px 20px 22px; display: grid; gap: 12px; }
-.price-value {
-  font-size: 1.6rem; color: #222; text-align: center;
+/* TOURS GRID */
+.tours-section { padding:60px 20px; background:#f8fcff; }
+.tours-header { text-align:center; margin-bottom:30px; }
+.tours-grid {
+  max-width:1200px; margin:0 auto;
+  display:grid; gap:20px;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
 }
-.price-value .from { font-size: .95rem; color: #6a7a86; margin-right: 6px; }
+.tour-card {
+  background:#fff; border-radius:12px; overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  display:flex; flex-direction:column;
+}
+.tour-thumb { position:relative; display:block; overflow:hidden; }
+.tour-thumb img { width:100%; display:block; }
+.play-badge {
+  position:absolute; bottom:10px; right:10px;
+  background:rgba(0,0,0,.6); color:#fff; border-radius:50%;
+  width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+}
+.tour-body { padding:16px; }
+.tour-title { font-size:1.1rem; color:#2B6777; margin-bottom:6px; }
+.tour-cta { color:#2B6777; font-weight:600; }
 
-.price-features {
-  list-style: none; padding: 0; margin: 6px 0 10px; color: #4a4a4a;
-  display: grid; gap: 8px;
-}
-.price-features li {
-  position: relative; padding-left: 28px; line-height: 1.5;
-}
-.price-features li::before {
-  content: "\f00c"; /* fa-check */
-  font-family: "Font Awesome 5 Free"; font-weight: 900;
-  position: absolute; left: 0; top: 0; transform: translateY(2px);
-  width: 20px; height: 20px; display: grid; place-items: center;
-  border-radius: 50%;
-  background: #e8f5f2; color: #2B6777; font-size: .75rem;
-}
+/* WERKWIJZE */
+.steps-section { padding:60px 20px; background:#fff; }
+.steps-header { text-align:center; margin-bottom:30px; }
+.steps { max-width:900px; margin:0 auto; list-style:none; display:grid; gap:20px; }
+.steps li { background:#f0faff; padding:20px; border-radius:10px; }
 
-.price-cta {
-  display: inline-block; text-align: center;
-  padding: 12px 16px; border-radius: 10px; background: #2B6777; color: #fff;
-  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
-  margin-top: 6px;
+/* PRICING CARDS */
+.pricing-section { padding:70px 20px; background:#f8fcff; }
+.pricing-header { text-align:center; margin-bottom:30px; }
+.pricing-grid {
+  max-width:1200px; margin:0 auto;
+  display:grid; gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
-.price-cta:hover { background: #52ab98; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(43,103,119,.22); }
-
-/* Zorg dat featured-kaart iets "hoger" oogt */
-@media (min-width: 900px) {
-  .price-card.featured { transform: translateY(-4px); }
-  .price-card.featured:hover { transform: translateY(-6px); }
+.price-card {
+  background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  position:relative; overflow:hidden;
+  transition:.2s;
 }
+.price-card:hover { transform:translateY
