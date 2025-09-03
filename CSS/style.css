@@ -1,64 +1,72 @@
-/* =========================
-   HOTFIX: GLOBAL HERO TERUG NORMAAL
-   (zet video/achtergrond weer netjes gecentreerd & op maat
-   voor ALLE pagina's behalve de Pro3)
-   ========================= */
-.hero-section {
-  height: 500px;           /* vaste zwarte balk, zoals eerder */
+/* === PRIJZEN – verbeterde kaarten === */
+.pricing-section { padding: 70px 20px; background: #f8fcff; }
+.pricing-header { max-width: 1200px; margin: 0 auto 28px; text-align: center; }
+.pricing-header h2 { color: #2B6777; font-size: 2rem; margin-bottom: 8px; }
+.pricing-header p { color: #4a4a4a; opacity: .9; }
+
+.pricing-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
 }
 
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: none !important;      /* verwijdert de -50%/ -50% uitlijning */
-  object-fit: cover !important;    /* vult de balk zonder rare rek */
-  z-index: 1;
+.price-card {
+  background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  display: grid; grid-template-rows: auto 1fr; overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(43,103,119,.12); border-color: rgba(43,103,119,.25); }
+
+.price-head {
+  background: linear-gradient(180deg, #ffffff 0%, #f3fbff 100%);
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  text-align: center;
+}
+.price-title { color: #2B6777; font-size: 1.15rem; font-weight: 600; }
+
+.price-badge {
+  position: absolute; margin: 10px 0 0 10px;
+  background: #2B6777; color: #fff; font-size: .8rem; font-weight: 600;
+  padding: 6px 10px; border-radius: 999px; z-index: 1; box-shadow: 0 6px 14px rgba(43,103,119,.25);
+}
+.price-card.featured { border: 2px solid #2B6777; box-shadow: 0 16px 38px rgba(43,103,119,.18); }
+.price-card.featured .price-head { background: linear-gradient(180deg, #e9f7fb 0%, #ffffff 100%); }
+
+.price-body { padding: 18px 20px 22px; display: grid; gap: 12px; }
+.price-value {
+  font-size: 1.6rem; color: #222; text-align: center;
+}
+.price-value .from { font-size: .95rem; color: #6a7a86; margin-right: 6px; }
+
+.price-features {
+  list-style: none; padding: 0; margin: 6px 0 10px; color: #4a4a4a;
+  display: grid; gap: 8px;
+}
+.price-features li {
+  position: relative; padding-left: 28px; line-height: 1.5;
+}
+.price-features li::before {
+  content: "\f00c"; /* fa-check */
+  font-family: "Font Awesome 5 Free"; font-weight: 900;
+  position: absolute; left: 0; top: 0; transform: translateY(2px);
+  width: 20px; height: 20px; display: grid; place-items: center;
+  border-radius: 50%;
+  background: #e8f5f2; color: #2B6777; font-size: .75rem;
 }
 
-/* =========================
-   PRO3-PAGINA: SPECIFIEKE HERO
-   (alleen hier gebruiken we de grote GIF)
-   ========================= */
-.page-pro3 .hero-section {
-  position: relative;
-  background: #000; /* zwarte balk */
-  overflow: hidden;
+.price-cta {
+  display: inline-block; text-align: center;
+  padding: 12px 16px; border-radius: 10px; background: #2B6777; color: #fff;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+  margin-top: 6px;
 }
+.price-cta:hover { background: #52ab98; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(43,103,119,.22); }
 
-.page-pro3 .hero-background {
-  /* Pro3-hero gebruikt de zwarte balk; geen video nodig.
-     Laat dit element gewoon bestaan; het blijft de zwarte achtergrond. */
-  background: #000;
-}
-
-.page-pro3 .hero-gif {
-  position: absolute;
-  z-index: 2;                 /* tussen balk en tekst */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(2); /* 2x groter op desktop */
-  transform-origin: center;
-  width: min(60vw, 520px);
-  height: auto;
-  opacity: 0.95;
-  pointer-events: none;
-}
-
-.page-pro3 .hero-content {
-  position: relative;
-  z-index: 3;                 /* tekst boven de GIF */
-}
-
-/* Responsieve schalen van de GIF alleen op Pro3-pagina */
-@media (max-width: 1024px) {
-  .page-pro3 .hero-gif { transform: translate(-50%, -50%) scale(1.8); }
-}
-@media (max-width: 768px) {
-  .page-pro3 .hero-gif { transform: translate(-50%, -50%) scale(1.5); }
-}
-@media (max-width: 480px) {
-  .page-pro3 .hero-gif { transform: translate(-50%, -50%) scale(1.2); }
+/* Zorg dat featured-kaart iets "hoger" oogt */
+@media (min-width: 900px) {
+  .price-card.featured { transform: translateY(-4px); }
+  .price-card.featured:hover { transform: translateY(-6px); }
 }
