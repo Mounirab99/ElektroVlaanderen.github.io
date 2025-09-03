@@ -394,5 +394,83 @@ a { color: #000; text-decoration: none; }
   .hero-gif { height: 72%; }
 }
 
+/* === STARTPRIJZEN als 3 blokken in jouw stijl === */
+.pricing-section { padding: 60px 20px; background: #ffffff; }
+.pricing-header { max-width: 1200px; margin: 0 auto 24px; text-align: center; }
+.pricing-header h2 { color: #2B6777; font-size: 2rem; margin-bottom: 8px; }
+.pricing-header p  { color: #4a4a4a; opacity: .95; }
+
+/* grid zoals je square-section, maar responsive */
+.pricing-tiles {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 992px) { .pricing-tiles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .pricing-tiles { grid-template-columns: 1fr; } }
+
+.pricing-tile {
+  background: #f0faff; border-radius: 12px; padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  display: grid; gap: 12px;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.pricing-tile:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(43,103,119,0.12);
+}
+
+/* header + titel/subtitel zoals bij je vraag voor 3 blokjes */
+.pricing-tile-title { color: #2B6777; font-size: 1.2rem; line-height: 1.25; }
+.pricing-tile-sub {
+  display: block; margin-top: 4px;
+  font-size: 1rem; font-weight: 500; color: #6a7a86;
+}
+
+/* prijs */
+.pricing-tile-price {
+  text-align: left; font-size: 1.35rem; color: #222;
+}
+.pricing-tile-price span {
+  font-size: .95rem; color: #6a7a86; margin-right: 6px;
+}
+
+/* features met check-icoon in jouw kleur */
+.pricing-tile-list { list-style: none; padding: 0; margin: 6px 0 10px; display: grid; gap: 8px; color: #4a4a4a; }
+.pricing-tile-list li {
+  position: relative; padding-left: 28px; line-height: 1.5;
+}
+.pricing-tile-list li::before {
+  content: "\f00c"; /* Font Awesome check */
+  font-family: "Font Awesome 5 Free"; font-weight: 900;
+  position: absolute; left: 0; top: 0.2em;
+  width: 20px; height: 20px; display: grid; place-items: center;
+  border-radius: 50%;
+  background: #e8f5f2; color: #2B6777; font-size: .75rem;
+}
+
+/* CTA knop in jouw stijl */
+.pricing-tile-cta {
+  display: inline-block; width: fit-content;
+  padding: 12px 16px; border-radius: 8px;
+  background: #2B6777; color: #fff; text-decoration: none;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.pricing-tile-cta:hover { background: #52ab98; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(43,103,119,.18); }
+
+/* featured middenkaart net iets opvallender */
+.pricing-tile--featured {
+  border: 2px solid #2B6777;
+  box-shadow: 0 12px 28px rgba(43,103,119,.16);
+  position: relative;
+}
+.pricing-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: #2B6777; color: #fff; font-size: .8rem; font-weight: 600;
+  padding: 6px 10px; border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(43,103,119,.25);
+}
+
 
 
