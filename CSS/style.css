@@ -472,5 +472,24 @@ a { color: #000; text-decoration: none; }
   box-shadow: 0 6px 14px rgba(43,103,119,.25);
 }
 
+/* Badge rechtsboven i.p.v. over de titel */
+.pricing-badge {
+  top: 10px;
+  right: 10px;
+  left: auto;        /* was left:12px; */
+  z-index: 2;
+}
+
+/* Geef de featured-kaart wat extra ruimte bovenaan, zodat de badge niets raakt */
+.pricing-tile--featured .pricing-tile-head {
+  padding-top: 38px; /* extra ruimte voor badge */
+}
+
+/* (optioneel) iets kleinere badge op smalle schermen */
+@media (max-width: 480px) {
+  .pricing-badge { transform: scale(0.95); top: 8px; right: 8px; }
+  .pricing-tile--featured .pricing-tile-head { padding-top: 32px; }
+}
+
 
 
