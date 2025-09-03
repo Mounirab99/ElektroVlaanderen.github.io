@@ -491,5 +491,26 @@ a { color: #000; text-decoration: none; }
   .pricing-tile--featured .pricing-tile-head { padding-top: 32px; }
 }
 
+/* Badge rechtsboven en niet klik-blokkerend */
+.pricing-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  left: auto;
+  z-index: 3;
+  pointer-events: none; /* label blokkeert geen klikken */
+}
+
+/* Geef de featured-tegel extra top-padding zodat de badge niets overlapt */
+.pricing-tile--featured {
+  padding-top: 56px !important; /* was 20px; nu +36px clearance voor de badge */
+}
+
+/* (optioneel) iets compacter op small screens */
+@media (max-width: 480px) {
+  .pricing-tile--featured { padding-top: 48px !important; }
+  .pricing-badge { top: 10px; right: 10px; }
+}
+
 
 
