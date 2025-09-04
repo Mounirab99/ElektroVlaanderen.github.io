@@ -7,6 +7,23 @@
   <link rel="stylesheet" href="CSS/style.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <style>
+    /* Extra styling voor hero-afbeelding */
+    .hero-gif {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 75%;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.95;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) { .hero-gif { height: 68%; } }
+    @media (max-width: 480px) { .hero-gif { height: 62%; } }
+  </style>
 </head>
 <body>
   <!-- NAV -->
@@ -37,24 +54,29 @@
   </nav>
 
   <main>
-    <!-- HERO: zwarte balk met titel -->
-  <section class="hero-section" aria-label="Vloerplannen">
-  <div class="hero-content">
-    <h1>Vloerplannen (Floorplans)</h1>
-    <p>Heldere 2D- en 3D-vloerplannen op basis van je Matterport Pro3 3d-scan. 
-       <strong>Beschikbaar als extra service na aankoop van een 3D-scan.</strong></p>
-  </div>
-  <div class="hero-background" style="background:#000;"></div>
-</section>
+    <!-- HERO: zwarte balk met afbeelding -->
+    <section class="hero-section" aria-label="Vloerplannen">
+      <div class="hero-content">
+        <h1>Vloerplannen (Floorplans)</h1>
+        <p>Heldere 2D- en 3D-vloerplannen op basis van je Matterport Pro3 3D-scan. 
+           <strong>Beschikbaar als extra service na aankoop van een 3D-scan.</strong></p>
+      </div>
+      <div class="hero-background" style="background:#000;"></div>
+      <img
+        class="hero-gif"
+        src="Assets/floorplans/voorbeeld-vloerplan-large.jpg"
+        alt="Voorbeeld vloerplan"
+      />
+    </section>
 
-    <!-- USP’s in jouw stijl -->
+    <!-- USP’s -->
     <section class="pro3-section">
-     <div class="pro3-header">
-  <h2>Waarom vloerplannen via Snap360?</h2>
-  <p>Professionele plannen die je ruimte duidelijk presenteren. 
-     <strong>Ze kunnen enkel besteld worden in combinatie met een Matterport Pro3 3d-scan</strong>, 
-     zodat maatvoering en nauwkeurigheid gegarandeerd zijn.</p>
-</div>
+      <div class="pro3-header">
+        <h2>Waarom vloerplannen via Snap360?</h2>
+        <p>Professionele plannen die je ruimte duidelijk presenteren. 
+           <strong>Ze kunnen enkel besteld worden in combinatie met een Matterport Pro3 3D-scan</strong>, 
+           zodat maatvoering en nauwkeurigheid gegarandeerd zijn.</p>
+      </div>
 
       <div class="pro3-features">
         <div class="pro3-feature">
@@ -75,12 +97,12 @@
         <div class="pro3-feature">
           <i class="fas fa-home"></i>
           <h3>Voor woning & bedrijf</h3>
-          <p>Van Residentiële, tertiare tot industriële locaties.</p>
+          <p>Van residentieel tot industrieel vastgoed.</p>
         </div>
       </div>
     </section>
 
-    <!-- PRAKTIJKVOORBEELD: 1 tegel -->
+    <!-- PRAKTIJKVOORBEELD -->
     <section class="tours-section">
       <div class="tours-header">
         <h2>Praktijkvoorbeeld</h2>
@@ -89,13 +111,13 @@
 
       <div class="tours-grid" style="grid-template-columns: 1fr; max-width: 900px;">
         <article class="tour-card">
-          <!-- Klik opent grote afbeelding of PDF -->
           <a class="tour-thumb"
              href="Assets/floorplans/voorbeeld-vloerplan-large.jpg"
              target="_blank" rel="noopener noreferrer">
-            <img src="Assets/floorplans/voorbeeld-vloerplan-large"
-                 alt="Voorbeeld vloerplan"
-                 loading="lazy">
+            <img
+              src="Assets/floorplans/voorbeeld-vloerplan-large.jpg"
+              alt="Voorbeeld vloerplan"
+              loading="lazy">
             <span class="play-badge"><i class="fas fa-search-plus"></i></span>
           </a>
           <div class="tour-body">
@@ -109,7 +131,7 @@
       </div>
     </section>
 
-    <!-- (Optioneel) WERKWIJZE -->
+    <!-- WERKWIJZE -->
     <section class="steps-section">
       <div class="steps-header">
         <h2>Werkwijze</h2>
@@ -122,7 +144,7 @@
         </li>
         <li>
           <h3>2. Uitwerking</h3>
-          <p>Wij genereren en controleren het vloerplan, inclusief maatvoering. Met behulp van AI.</p>
+          <p>Wij genereren en controleren het vloerplan, inclusief maatvoering.</p>
         </li>
         <li>
           <h3>3. Oplevering</h3>
@@ -131,14 +153,14 @@
       </ol>
     </section>
 
-    <!-- (Optioneel) PRIJZEN: als je dezelfde 3-tegel stijl wil gebruiken -->
+    <!-- PRIJZEN -->
     <section class="pricing-section">
-     <div class="pricing-header">
-  <h2>Startprijzen vloerplannen</h2>
-  <p>Indicatieve prijzen voor vloerplannen. 
-     <strong>Alleen beschikbaar als uitbreiding op een Pro3-scan</strong>. 
-     Combineerbaar met je virtuele tour.</p>
-</div>
+      <div class="pricing-header">
+        <h2>Startprijzen vloerplannen</h2>
+        <p>Indicatieve prijzen voor vloerplannen. 
+           <strong>Alleen beschikbaar als uitbreiding op een Pro3-scan</strong>. 
+           Combineerbaar met je virtuele tour.</p>
+      </div>
 
       <div class="pricing-tiles">
         <article class="pricing-tile">
@@ -149,7 +171,7 @@
             </h3>
           </div>
           <div class="pricing-tile-body">
-            <p class="pricing-tile-price"><span>vanaf</span> <strong>€141,57 Incl.BTW</strong></p>
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€141,57 Incl. BTW</strong></p>
             <ul class="pricing-tile-list">
               <li>PNG/PDF export</li>
               <li>Basismaten & oppervlaktes</li>
@@ -168,7 +190,7 @@
             </h3>
           </div>
           <div class="pricing-tile-body">
-            <p class="pricing-tile-price"><span>vanaf</span> <strong>€419,87Incl.BTW</strong></p>
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€419,87 Incl. BTW</strong></p>
             <ul class="pricing-tile-list">
               <li>PNG/PDF export</li>
               <li>Maatvoering & lagen</li>
@@ -186,7 +208,7 @@
             </h3>
           </div>
           <div class="pricing-tile-body">
-            <p class="pricing-tile-price"><span>vanaf</span> <strong>€275,15Incl.BTW</strong></p>
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€275,15 Incl. BTW</strong></p>
             <ul class="pricing-tile-list">
               <li>2D + optioneel 3D weergave</li>
               <li>PNG/PDF, optioneel DXF/CAD</li>
@@ -248,4 +270,3 @@
   <script src="Assets/js/script.js"></script>
 </body>
 </html>
-
