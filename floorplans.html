@@ -7,15 +7,16 @@
   <link rel="stylesheet" href="CSS/style.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
   <style>
-    /* Extra styling voor hero GIF */
+    /* Hero GIF (dubbel zo groot) */
     .hero-gif {
       position: absolute;
       z-index: 1;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      height: 200%;   /* dubbel zo groot */
+      height: 200%;   /* dubbel */
       width: auto;
       object-fit: contain;
       opacity: 0.95;
@@ -23,6 +24,21 @@
     }
     @media (max-width: 768px) { .hero-gif { height: 150%; } }
     @media (max-width: 480px) { .hero-gif { height: 120%; } }
+
+    /* Zorg dat de 'Populair' badge niet over de titel valt */
+    .pricing-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      left: auto;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .pricing-tile--featured { padding-top: 56px !important; } /* ruimte boven titel */
+    @media (max-width: 480px) {
+      .pricing-tile--featured { padding-top: 48px !important; }
+      .pricing-badge { top: 10px; right: 10px; }
+    }
   </style>
 </head>
 <body>
@@ -69,7 +85,6 @@
       />
     </section>
 
-    <!-- rest blijft identiek... -->
     <!-- USP’s -->
     <section class="pro3-section">
       <div class="pro3-header">
@@ -132,14 +147,118 @@
       </div>
     </section>
 
-    <!-- (Rest van de pagina: werkwijze, prijzen, CTA, footer blijft zoals je had) -->
+    <!-- WERKWIJZE -->
+    <section class="steps-section">
+      <div class="steps-header">
+        <h2>Werkwijze</h2>
+        <p>Van scan tot plan in drie stappen.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>1. Scan & input</h3>
+          <p>We gebruiken je Matterport Pro3 3D-scan (of plannen een scan in).</p>
+        </li>
+        <li>
+          <h3>2. Uitwerking</h3>
+          <p>Wij genereren en controleren het vloerplan, inclusief maatvoering.</p>
+        </li>
+        <li>
+          <h3>3. Oplevering</h3>
+          <p>Je krijgt het plan in afgesproken formaat (PNG/PDF, optioneel DXF/CAD).</p>
+        </li>
+      </ol>
+    </section>
 
+    <!-- PRIJZEN (3 tegels) -->
+    <section class="pricing-section">
+      <div class="pricing-header">
+        <h2>Startprijzen vloerplannen</h2>
+        <p>Indicatieve prijzen voor vloerplannen. 
+           <strong>Alleen beschikbaar als uitbreiding op een Pro3-scan</strong>. 
+           Combineerbaar met je virtuele tour.</p>
+      </div>
+
+      <div class="pricing-tiles">
+        <!-- Tegel 1 -->
+        <article class="pricing-tile">
+          <div class="pricing-tile-head">
+            <h3 class="pricing-tile-title">
+              2D Vloerplan
+              <span class="pricing-tile-sub">(1 verdiep, tot 185&nbsp;m²)</span>
+            </h3>
+          </div>
+          <div class="pricing-tile-body">
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€&nbsp;141,57 Incl. BTW</strong></p>
+            <ul class="pricing-tile-list">
+              <li>PNG/PDF export</li>
+              <li>Basismaten & oppervlaktes</li>
+              <li>Kleur of zwart-wit</li>
+            </ul>
+            <a class="pricing-tile-cta" href="contact.html">Offerte aanvragen</a>
+          </div>
+        </article>
+
+        <!-- Tegel 2 (featured) -->
+        <article class="pricing-tile pricing-tile--featured">
+          <div class="pricing-badge">Populair</div>
+          <div class="pricing-tile-head">
+            <h3 class="pricing-tile-title">
+              2D Vloerplan
+              <span class="pricing-tile-sub">(meerdere verdiepen, tot 370&nbsp;m²)</span>
+            </h3>
+          </div>
+          <div class="pricing-tile-body">
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€&nbsp;419,87 Incl. BTW</strong></p>
+            <ul class="pricing-tile-list">
+              <li>PNG/PDF export</li>
+              <li>Maatvoering & lagen</li>
+              <li>Kleur of zwart-wit</li>
+            </ul>
+            <a class="pricing-tile-cta" href="contact.html">Offerte aanvragen</a>
+          </div>
+        </article>
+
+        <!-- Tegel 3 -->
+        <article class="pricing-tile">
+          <div class="pricing-tile-head">
+            <h3 class="pricing-tile-title">
+              2D/3D Vloerplan
+              <span class="pricing-tile-sub">(vanaf ±&nbsp;560&nbsp;m²)</span>
+            </h3>
+          </div>
+          <div class="pricing-tile-body">
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€&nbsp;275,15 Incl. BTW</strong></p>
+            <ul class="pricing-tile-list">
+              <li>2D + optioneel 3D weergave</li>
+              <li>PNG/PDF, optioneel DXF/CAD</li>
+              <li>Project-specifieke annotaties</li>
+            </ul>
+            <a class="pricing-tile-cta" href="contact.html">Offerte aanvragen</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-final">
+      <h2>Klaar voor duidelijke vloerplannen?</h2>
+      <a href="contact.html" class="cta-button">Vraag jouw vloerplan aan →</a>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <!-- footer inhoud -->
-  </footer>
-
-  <script src="Assets/js/script.js"></script>
-</body>
-</html>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4 class="footer-heading">Snap360-snapwithus360.com</h4>
+        <p class="footer-text">De specialist in innovatieve beeldtechnologie voor vastgoed en architectuur.</p>
+        <div class="social-icons">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-heading">Snelle links</h4>
+        <ul clas
