@@ -1,1 +1,250 @@
+<!DOCTYPE html>
+<html lang="nl-be">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FPV Aerial Video | Snap360</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+  <style>
+    /* Hero FPV */
+    .hero-fpv {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 160%;
+      width: auto;
+      object-fit: cover;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) { .hero-fpv { height: 130%; } }
+    @media (max-width: 480px) { .hero-fpv { height: 110%; } }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <i class="uil uil-bars navOpenBtn"></i>
+    <a href="3D.html" class="logo">
+      <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image">
+    </a>
+    <ul class="nav-links">
+      <i class="uil uil-times navCloseBtn"></i>
+      <li><a href="3D.html">Home</a></li>
+
+      <li class="has-submenu">
+        <a href="360.html">Services</a>
+        <ul class="submenu">
+          <li><a href="3d-scans.html">3D Matterport</a></li>
+          <li><a href="floorplans.html">Vloerplannen</a></li>
+          <li><a href="under-construction.html">Photography</a></li>
+          <li><a href="under-construction.html">Drone foto's &amp; Video's</a></li>
+          <li><a href="fpv.html">FPV Aerial Videos</a></li>
+        </ul>
+      </li>
+
+      <li><a href="fotvi.html">Referenties</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-section" aria-label="FPV Aerial Video">
+      <div class="hero-content">
+        <h1>FPV Aerial Video</h1>
+        <p>Beleef unieke en meeslepende dronevluchten met FPV-technologie. Perfect voor promoties, evenementen en krachtige visuele verhalen.</p>
+      </div>
+      <div class="hero-background" style="background:#000;"></div>
+      <img class="hero-fpv" src="Assets/fpv/fpv-hero.gif" alt="FPV drone animatie">
+    </section>
+
+    <!-- USP’s -->
+    <section class="pro3-section">
+      <div class="pro3-header">
+        <h2>Waarom FPV-video?</h2>
+        <p>FPV-video brengt je publiek in het hart van de actie. Dynamische vluchten, spectaculaire beelden en creatieve invalshoeken die met klassieke drones onmogelijk zijn.</p>
+      </div>
+
+      <div class="pro3-features">
+        <div class="pro3-feature">
+          <i class="fas fa-bolt"></i>
+          <h3>Adrenaline shots</h3>
+          <p>Snel en dynamisch, ideaal voor promoties en aftermovies.</p>
+        </div>
+        <div class="pro3-feature">
+          <i class="fas fa-film"></i>
+          <h3>Cinematische kwaliteit</h3>
+          <p>Professionele beelden met vloeiende stabilisatie.</p>
+        </div>
+        <div class="pro3-feature">
+          <i class="fas fa-map-marked-alt"></i>
+          <h3>Unieke perspectieven</h3>
+          <p>Vlieg door ramen, gebouwen of over mensenmassa’s.</p>
+        </div>
+        <div class="pro3-feature">
+          <i class="fas fa-rocket"></i>
+          <h3>Flexibel inzetbaar</h3>
+          <p>Voor vastgoed, bedrijven, sport en events.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOORBEELD VIDEO -->
+    <section class="tours-section">
+      <div class="tours-header">
+        <h2>Voorbeeld FPV-video</h2>
+        <p>Bekijk hoe FPV een totaal nieuwe dimensie geeft aan video.</p>
+      </div>
+
+      <div class="tours-grid" style="grid-template-columns: 1fr; max-width: 900px;">
+        <article class="tour-card">
+          <div class="tour-thumb" style="aspect-ratio:16/9;">
+            <!-- Embed YouTube/Vimeo -->
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/aqz-KE-bpKQ" 
+              title="Voorbeeld FPV Video"
+              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">FPV Drone Experience</h3>
+            <p class="tour-meta">Cinematische dynamische dronebeelden</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WERKWIJZE -->
+    <section class="steps-section">
+      <div class="steps-header">
+        <h2>Werkwijze</h2>
+        <p>Zo verloopt een FPV-project bij Snap360.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>1. Concept & script</h3>
+          <p>We bespreken het doel, locatie en gewenste shots.</p>
+        </li>
+        <li>
+          <h3>2. Shootdag</h3>
+          <p>FPV-dronevluchten op locatie met alle veiligheidsmaatregelen.</p>
+        </li>
+        <li>
+          <h3>3. Montage & oplevering</h3>
+          <p>Wij leveren een afgewerkte video op in hoge kwaliteit.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PRIJZEN -->
+    <section class="pricing-section">
+      <div class="pricing-header">
+        <h2>Startprijzen FPV-video</h2>
+        <p>Indicatieve prijzen voor FPV-projecten. Voor grotere of complexe opdrachten maken we een voorstel op maat.</p>
+      </div>
+
+      <div class="pricing-tiles">
+        <article class="pricing-tile">
+          <div class="pricing-tile-head">
+            <h3 class="pricing-tile-title">Short FPV Clip <span class="pricing-tile-sub">(tot 60 sec)</span></h3>
+          </div>
+          <div class="pricing-tile-body">
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€299 Incl. BTW</strong></p>
+            <ul class="pricing-tile-list">
+              <li>1 locatie</li>
+              <li>1 FPV-pilot + camera-operator</li>
+              <li>Afgewerkte korte video</li>
+            </ul>
+            <a class="pricing-tile-cta" href="contact.html">Offerte aanvragen</a>
+          </div>
+        </article>
+
+        <article class="pricing-tile pricing-tile--featured">
+          <div class="pricing-badge">Populair</div>
+          <div class="pricing-tile-head">
+            <h3 class="pricing-tile-title">Corporate FPV Video <span class="pricing-tile-sub">(1-3 min)</span></h3>
+          </div>
+          <div class="pricing-tile-body">
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€749 Incl. BTW</strong></p>
+            <ul class="pricing-tile-list">
+              <li>1-2 locaties</li>
+              <li>In overleg script + montage</li>
+              <li>Professionele nabewerking</li>
+            </ul>
+            <a class="pricing-tile-cta" href="contact.html">Offerte aanvragen</a>
+          </div>
+        </article>
+
+        <article class="pricing-tile">
+          <div class="pricing-tile-head">
+            <h3 class="pricing-tile-title">Event FPV Coverage <span class="pricing-tile-sub">(tot 1 dag)</span></h3>
+          </div>
+          <div class="pricing-tile-body">
+            <p class="pricing-tile-price"><span>vanaf</span> <strong>€1199 Incl. BTW</strong></p>
+            <ul class="pricing-tile-list">
+              <li>Meerdere vluchten</li>
+              <li>Highlight aftermovie</li>
+              <li>Incl. montage & muziek</li>
+            </ul>
+            <a class="pricing-tile-cta" href="contact.html">Offerte aanvragen</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-final">
+      <h2>Klaar om jouw verhaal te vertellen met FPV?</h2>
+      <a href="contact.html" class="cta-button">Plan jouw FPV-video →</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4 class="footer-heading">Snap360-snapwithus360.com</h4>
+        <p class="footer-text">De specialist in innovatieve beeldtechnologie voor vastgoed en architectuur.</p>
+        <div class="social-icons">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-heading">Snelle links</h4>
+        <ul class="footer-links">
+          <li><a href="3D.html" class="footer-link">Home</a></li>
+          <li><a href="360.html" class="footer-link">Services</a></li>
+          <li><a href="fotvi.html" class="footer-link">Referenties</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-heading">Contact</h4>
+        <div class="contact-info">
+          <p class="footer-text"><i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100 Sint-Niklaas</p>
+          <p class="footer-text"><i class="fas fa-phone"></i> +32 476 61 10 99</p>
+          <p class="footer-text"><i class="fas fa-envelope"></i> tom@snapwithus360.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SNAPWITHUS360.com - DE BACKER LLC. Alle rechten voorbehouden.</p>
+      <div class="legal-links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="Assets/js/script.js"></script>
+</body>
+</html>
 
