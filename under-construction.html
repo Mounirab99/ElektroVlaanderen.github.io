@@ -8,114 +8,82 @@
   <!-- Belangrijk: laat zoekmachines deze pagina niet indexeren -->
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Je bestaande styles (kleur/typografie) -->
+  <!-- Bestaande styles (kleur/typografie) -->
   <link rel="stylesheet" href="CSS/style.css" />
 
   <style>
-/* Zelfde look/feel als je normale hero */
-.uc-hero {
-  height: 500px;            /* zelfde hoogte als .hero-section */
-  margin-top: 60px;         /* ruimte voor je fixed navbar (zoals .hero-section) */
-  padding: 0 20px;          /* alleen horizontale padding */
-  background: #000;         /* zwarte balk */
-  position: relative;
-  overflow: hidden;
-
-  display: flex;            /* inhoud centreren */
-  align-items: center;
-  justify-content: center;
-}
-
-.uc-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  padding: 28px 24px;
-  max-width: 720px;
-  width: 92vw;
-  text-align: center;
-  color: #fff;
-  backdrop-filter: blur(6px);
-}
-
-/* Zelfde responsiviteit als je gewone hero */
-@media (max-width: 480px) {
-  .uc-hero { height: 400px; }  /* matcht jouw mobile-hero */
-}
+    /* Zelfde look/feel als je normale hero */
+    .uc-hero {
+      height: 500px;            /* zelfde hoogte als .hero-section */
+      margin-top: 60px;         /* ruimte voor je fixed navbar */
+      padding: 0 20px;
+      background: #000;         /* zwarte balk */
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .uc-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 28px 24px;
+      max-width: 720px;
+      width: 92vw;
+      text-align: center;
+      color: #fff;
+      backdrop-filter: blur(6px);
+    }
+    @media (max-width: 480px) {
+      .uc-hero { height: 400px; }
+    }
     .uc-emoji {
       font-size: 3rem;
       display: inline-block;
       margin-bottom: 10px;
+      animation: bob 2.2s ease-in-out infinite;
     }
-    .uc-title {
-      font-size: 2rem;
-      margin: 6px 0 10px;
-      color: #fff;
-    }
-    .uc-text {
-      color: #dfe7f1;
-      line-height: 1.8;
-      margin: 0 auto 18px;
-    }
-    .uc-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
+    .uc-title { font-size: 2rem; margin: 6px 0 10px; color: #fff; }
+    .uc-text  { color: #dfe7f1; line-height: 1.8; margin: 0 auto 18px; }
+    .uc-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
     .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
+      display: inline-block; padding: 12px 22px; border-radius: 8px; text-decoration: none;
       transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
-      border: 2px solid transparent;
-      font-weight: 500;
+      border: 2px solid transparent; font-weight: 500;
     }
-    .btn-primary {
-      background: #2B6777;
-      color: #fff;
-    }
+    .btn-primary { background: #2B6777; color: #fff; }
     .btn-primary:hover { background:#52ab98; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(43,103,119,.25); }
-    .btn-ghost {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255,255,255,0.35);
-    }
+    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
     .btn-ghost:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
-    .uc-note {
-      margin-top: 14px;
-      font-size: .95rem;
-      color: #c9d6e2;
-      opacity: .9;
-    }
-
-    /* Kleine animatie voor de emoji */
-    @keyframes bob {
-      0%,100% { transform: translateY(0); }
-      50%     { transform: translateY(-6px); }
-    }
-    .uc-emoji { animation: bob 2.2s ease-in-out infinite; }
-
-    /* Mobiel tweaks */
-    @media (max-width: 480px) {
-      .uc-title{ font-size:1.6rem; }
-      .uc-text { font-size:1rem; }
-    }
+    .uc-note { margin-top: 14px; font-size: .95rem; color: #c9d6e2; opacity: .9; }
+    @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
   </style>
 </head>
 <body>
-  <!-- Je vaste navigatie (optioneel kun je deze inkorten) -->
+  <!-- NAV -->
   <nav class="nav">
-    <i class="uil uil-bars navOpenBtn"></i>
+    <i class="uil uil-bars navOpenBtn" aria-label="Menu openen"></i>
     <a href="3D.html" class="logo">
       <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image">
     </a>
     <ul class="nav-links">
-      <i class="uil uil-times navCloseBtn"></i>
+      <i class="uil uil-times navCloseBtn" aria-label="Menu sluiten"></i>
       <li><a href="3D.html">Home</a></li>
-      <li><a href="360.html">Services</a></li>
+
+      <!-- Services met submenu (openen via klik in script.js) -->
+      <li class="has-submenu">
+        <a href="360.html">Services</a>
+        <ul class="submenu">
+          <li><a href="under-construction.html">Photography</a></li>
+          <li><a href="under-construction.html">Drone foto's &amp; Video's</a></li>
+          <li><a href="3d-scans.html">3D Matterport</a></li>
+          <li><a href="under-construction.html">Video Tours</a></li>
+          <li><a href="floorplans.html">Vloerplannen</a></li>
+          <li><a href="fpv.html">FPV Aerial Videos</a></li>
+        </ul>
+      </li>
+
       <li><a href="fotvi.html">Referenties</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -128,7 +96,7 @@
         <h1 class="uc-title">Deze pagina is in opbouw</h1>
         <p class="uc-text">
           We werken achter de schermen aan iets moois. Binnenkort vind je hier alle informatie.
-          Intussen helpen we je graag verder via onze bestaande pagina’s of persoonlijk contact.
+          Intussen helpen we je graag via onze bestaande pagina’s of persoonlijk contact.
         </p>
         <div class="uc-actions">
           <a class="btn btn-primary" href="3D.html">Terug naar Home</a>
@@ -139,54 +107,8 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-section">
-        <h4 class="footer-heading">Snap360-snapwithus360.com</h4>
-        <p class="footer-text">De specialist in innovatieve beeldtechnologie voor vastgoed en architectuur.</p>
-        <div class="social-icons">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h4 class="footer-heading">Snelle links</h4>
-        <ul class="footer-links">
-          <li><a href="3D.html" class="footer-link">Home</a></li>
-          <li><a href="360.html" class="footer-link">Services</a></li>
-          <li><a href="fotvi.html" class="footer-link">Referenties</a></li>
-          <li><a href="contact.html" class="footer-link">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4 class="footer-heading">Contact</h4>
-        <div class="contact-info">
-          <p class="footer-text"><i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100 Sint-Niklaas</p>
-          <p class="footer-text"><i class="fas fa-phone"></i> +32 476 61 10 99</p>
-          <p class="footer-text"><i class="fas fa-envelope"></i> tom@snapwithus360.com</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 SNAPWITHUS360.com - DE BACKER LLC. Alle rechten voorbehouden.</p>
-      <div class="legal-links">
-        <a href="#">Privacybeleid</a>
-        <a href="#">Algemene voorwaarden</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // mobiele nav open/close (zelfde gedrag als je hoofdsite)
-    const nav = document.querySelector(".nav");
-    const navOpenBtn = document.querySelector(".navOpenBtn");
-    const navCloseBtn = document.querySelector(".navCloseBtn");
-    if(navOpenBtn){ navOpenBtn.addEventListener("click", ()=>{ nav.classList.add("openNav"); }); }
-    if(navCloseBtn){ navCloseBtn.addEventListener("click", ()=>{ nav.classList.remove("openNav"); }); }
-    window.addEventListener("scroll", ()=>{ if(nav.classList.contains("openNav")) nav.classList.remove("openNav"); });
-  </script>
-</body>
-</html>
-
+        <h4 class="footer
