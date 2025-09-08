@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="nl-be">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snapwithus360.com DE BACKER LLC</title>
-  <link rel="stylesheet" href="CSS/style.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Referenties | Snapwithus360.com — DE BACKER LLC</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
-        <nav class="nav">
-        <i class="uil uil-bars navOpenBtn"></i>
-        <a href="3D.html" class="logo">
-  <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image">
-  
-</a>
-  <ul class="nav-links">
-    <i class="uil uil-times navCloseBtn"></i>
-    <li><a href="3D.html">Home</a></li>
-    
-    <!-- Services met submenu -->
-    <li class="has-submenu">
-      <a href="360.html">Services</a>
-      <ul class="submenu">
+    <nav class="nav">
+      <i class="uil uil-bars navOpenBtn" aria-label="Menu openen"></i>
+
+      <a href="3D.html" class="logo">
+        <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image" />
+      </a>
+
+      <ul class="nav-links">
+        <i class="uil uil-times navCloseBtn" aria-label="Menu sluiten"></i>
+        <li><a href="3D.html">Home</a></li>
+
+        <!-- Services met submenu (openen via klik in script.js) -->
+        <li class="has-submenu">
+          <a href="360.html">Services</a>
+          <ul class="submenu">
             <li><a href="under-construction.html">Photography</a></li>
             <li><a href="under-construction.html">Drone foto's &amp; Video's</a></li>
             <li><a href="3d-scans.html">3D Matterport</a></li>
             <li><a href="under-construction.html">Video Tours</a></li>
             <li><a href="floorplans.html">Vloerplannen</a></li>
             <li><a href="fpv.html">FPV Aerial Videos</a></li>
+          </ul>
+        </li>
+
+        <li><a href="fotvi.html">Referenties</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-    </li>
-    
-    <li><a href="fotvi.html">Referenties</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    </nav>
   </header>
 
+  <!-- MAIN -->
   <main>
     <!-- Hero -->
-    <section class="hero-section">
-      <video class="hero-background" autoplay loop muted>
-        <source src="Assets/13489710_3840_2160_30fps.mp4" type="video/mp4">
+    <section class="hero-section" aria-label="Referenties hero">
+      <video
+        class="hero-background"
+        autoplay
+        loop
+        muted
+        playsinline
+        webkit-playsinline
+        preload="auto"
+        poster="Assets/Movies/placeholder.jpg"
+      >
+        <source src="Assets/13489710_3840_2160_30fps.mp4" type="video/mp4" />
         Je browser ondersteunt deze video niet.
       </video>
       <div class="hero-content">
@@ -52,113 +66,4 @@
     </section>
 
     <!-- Referenties / Clients -->
-    <section class="clients-section">
-      <div class="clients-header">
-        <h2>Referenties</h2>
-        <p>Een greep uit klanten waarvoor we mochten werken.</p>
-      </div>
-
-      <div class="clients-grid">
-        <!-- Klant 1 -->
-        <a class="client-card" href="https://www.toondeklerckbakkerij.be/" target="_blank" rel="noopener noreferrer" aria-label="Naar website van Klant 1">
-          <div class="client-logo-wrap">
-            <img src="https://le-de.cdn-website.com/667acad169ef485ca26e0a77a4eae378/dms3rep/multi/opt/toon_logovoorstel_v5-1313--new-logo1-162w.png" alt="Klant 1" class="client-logo" loading="lazy">
-          </div>
-        </a>
-
-        <!-- Klant 2 -->
-        <a class="client-card" href="https://www.progear.be/nl" target="_blank" rel="noopener noreferrer" aria-label="Naar website van Klant 2">
-          <div class="client-logo-wrap">
-            <img src="	https://tilroy.s3.eu-west-1.amazonaws.com/469/logo/ProGear-Logo-20181.q2chw.png" alt="Klant 2" class="client-logo" loading="lazy">
-          </div>
-        </a>
-
-        <!-- Klant 3 -->
-        <a class="client-card" href="https://worldwidefitnessgroup.com/" target="_blank" rel="noopener noreferrer" aria-label="Naar website van Klant 3">
-          <div class="client-logo-wrap">
-            <img src="Assets/clients/klant3.PNG" alt="Klant 3" class="client-logo" loading="lazy">
-          </div>
-        </a>
-
-        <!-- Klant 4 -->
-        <a class="client-card" href="https://www.coastfitness.com/" target="_blank" rel="noopener noreferrer" aria-label="Naar website van Klant 4">
-          <div class="client-logo-wrap">
-            <img src="Assets/clients/klant4.png" alt="Klant 4" class="client-logo" loading="lazy">
-          </div>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-section">
-        <h4 class="footer-heading">Snap360-snapwithus360.com</h4>
-        <p class="footer-text">
-          De specialist in innovatieve beeldtechnologie voor vastgoed en
-          architectuur.
-        </p>
-        <div class="social-icons">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-section">
-        <h4 class="footer-heading">Snelle links</h4>
-        <ul class="footer-links">
-          <li><a href="3D.html" class="footer-link">Home</a></li>
-          <li><a href="360.html" class="footer-link">Services</a></li>
-          <li><a href="fotvi.html" class="footer-link">Referenties</a></li>
-          <li><a href="contact.html" class="footer-link">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h4 class="footer-heading">Contact</h4>
-        <div class="contact-info">
-          <p class="footer-text">
-            <i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100
-            Sint-Niklaas
-          </p>
-          <p class="footer-text">
-            <i class="fas fa-phone"></i> +32 476 61 10 99
-          </p>
-          <p class="footer-text">
-            <i class="fas fa-envelope"></i> tom@snapwithus360.com
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>
-        &copy; 2025 SNAPWITHUS360.com - DE BACKER LLC. Alle rechten
-        voorbehouden.
-      </p>
-      <div class="legal-links">
-        <a href="#">Privacybeleid</a>
-        <a href="#">Algemene voorwaarden</a>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <section class="clients-sectio
