@@ -66,4 +66,143 @@
     </section>
 
     <!-- Referenties / Clients -->
-    <section class="clients-sectio
+    <section class="clients-section">
+      <div class="clients-header">
+        <h2>Referenties</h2>
+        <p>Een greep uit klanten waarvoor we mochten werken.</p>
+      </div>
+
+      <div class="clients-grid">
+        <!-- Klant 1 -->
+        <a class="client-card"
+           href="https://www.toondeklerckbakkerij.be/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Website Bakkerij Toon De Klerck">
+          <div class="client-logo-wrap">
+            <img
+              src="https://le-de.cdn-website.com/667acad169ef485ca26e0a77a4eae378/dms3rep/multi/opt/toon_logovoorstel_v5-1313--new-logo1-162w.png"
+              alt="Bakkerij Toon De Klerck"
+              class="client-logo"
+              loading="lazy"
+            />
+          </div>
+        </a>
+
+        <!-- Klant 2 -->
+        <a class="client-card"
+           href="https://www.progear.be/nl"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Website ProGear">
+          <div class="client-logo-wrap">
+            <img
+              src="https://tilroy.s3.eu-west-1.amazonaws.com/469/logo/ProGear-Logo-20181.q2chw.png"
+              alt="ProGear"
+              class="client-logo"
+              loading="lazy"
+            />
+          </div>
+        </a>
+
+        <!-- Klant 3 -->
+        <a class="client-card"
+           href="https://worldwidefitnessgroup.com/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Website Worldwide Fitness Group">
+          <div class="client-logo-wrap">
+            <img
+              src="Assets/clients/klant3.PNG"
+              alt="Worldwide Fitness Group"
+              class="client-logo"
+              loading="lazy"
+            />
+          </div>
+        </a>
+
+        <!-- Klant 4 -->
+        <a class="client-card"
+           href="https://www.coastfitness.com/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Website Coast Fitness">
+          <div class="client-logo-wrap">
+            <img
+              src="Assets/clients/klant4.png"
+              alt="Coast Fitness"
+              class="client-logo"
+              loading="lazy"
+            />
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4 class="footer-heading">Snap360-snapwithus360.com</h4>
+        <p class="footer-text">
+          De specialist in innovatieve beeldtechnologie voor vastgoed en architectuur.
+        </p>
+        <div class="social-icons">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-heading">Snelle links</h4>
+        <ul class="footer-links">
+          <li><a href="3D.html" class="footer-link">Home</a></li>
+          <li><a href="360.html" class="footer-link">Services</a></li>
+          <li><a href="fotvi.html" class="footer-link">Referenties</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-heading">Contact</h4>
+        <div class="contact-info">
+          <p class="footer-text"><i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100 Sint-Niklaas</p>
+          <p class="footer-text"><i class="fas fa-phone"></i> +32 476 61 10 99</p>
+          <p class="footer-text"><i class="fas fa-envelope"></i> tom@snapwithus360.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 SNAPWITHUS360.com - DE BACKER LLC. Alle rechten voorbehouden.</p>
+      <div class="legal-links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- iOS autoplay helper (optioneel) -->
+  <script>
+    (function () {
+      const v = document.querySelector(".hero-background");
+      if (!v) return;
+      v.muted = true;
+      v.setAttribute("muted", "");
+      v.setAttribute("playsinline", "");
+      v.setAttribute("webkit-playsinline", "");
+      const tryPlay = () => v.play().catch(() => {});
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        tryPlay();
+      } else {
+        document.addEventListener("DOMContentLoaded", tryPlay, { once: true });
+      }
+      window.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+      document.addEventListener("visibilitychange", () => { if (!document.hidden) tryPlay(); });
+    })();
+  </script>
+
+  <!-- Centrale nav/submenu script -->
+  <script src="/script.js" defer></script>
+  <!-- Gebruik <script src="script.js" defer></script> als je site niet vanaf de domein-root draait -->
+</body>
+</html>
