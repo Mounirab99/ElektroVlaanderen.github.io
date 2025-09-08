@@ -5,59 +5,63 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pagina in opbouw | Snap360</title>
 
-  <!-- Belangrijk: laat zoekmachines deze pagina niet indexeren -->
+  <!-- Zoekmachines: niet indexeren -->
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Bestaande styles (kleur/typografie) -->
+  <!-- Styles -->
   <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
   <style>
     /* Zelfde look/feel als je normale hero */
-    .uc-hero {
-      height: 500px;            /* zelfde hoogte als .hero-section */
-      margin-top: 60px;         /* ruimte voor je fixed navbar */
-      padding: 0 20px;
-      background: #000;         /* zwarte balk */
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .uc-hero{
+      height:500px;               /* matcht .hero-section hoogte */
+      margin-top:60px;            /* ruimte voor fixed navbar */
+      padding:0 20px;
+      background:#000;            /* zwarte balk */
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
-    .uc-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 28px 24px;
-      max-width: 720px;
-      width: 92vw;
-      text-align: center;
-      color: #fff;
-      backdrop-filter: blur(6px);
+    .uc-card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:16px;
+      padding:28px 24px;
+      max-width:720px;
+      width:92vw;
+      text-align:center;
+      color:#fff;
+      backdrop-filter:blur(6px);
     }
-    @media (max-width: 480px) {
-      .uc-hero { height: 400px; }
+    @media (max-width:480px){ .uc-hero{ height:400px; } }
+
+    .uc-emoji{
+      font-size:3rem;
+      display:inline-block;
+      margin-bottom:10px;
+      animation:bob 2.2s ease-in-out infinite;
     }
-    .uc-emoji {
-      font-size: 3rem;
-      display: inline-block;
-      margin-bottom: 10px;
-      animation: bob 2.2s ease-in-out infinite;
+    .uc-title{ font-size:2rem; margin:6px 0 10px; color:#fff; }
+    .uc-text{ color:#dfe7f1; line-height:1.8; margin:0 auto 18px; }
+    .uc-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+
+    .btn{
+      display:inline-block; padding:12px 22px; border-radius:8px; text-decoration:none;
+      transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
+      border:2px solid transparent; font-weight:500;
     }
-    .uc-title { font-size: 2rem; margin: 6px 0 10px; color: #fff; }
-    .uc-text  { color: #dfe7f1; line-height: 1.8; margin: 0 auto 18px; }
-    .uc-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
-    .btn {
-      display: inline-block; padding: 12px 22px; border-radius: 8px; text-decoration: none;
-      transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
-      border: 2px solid transparent; font-weight: 500;
-    }
-    .btn-primary { background: #2B6777; color: #fff; }
-    .btn-primary:hover { background:#52ab98; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(43,103,119,.25); }
-    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
-    .btn-ghost:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
-    .uc-note { margin-top: 14px; font-size: .95rem; color: #c9d6e2; opacity: .9; }
-    @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    .btn-primary{ background:#2B6777; color:#fff; }
+    .btn-primary:hover{ background:#52ab98; transform:translateY(-2px); box-shadow:0 6px 18px rgba(43,103,119,.25); }
+    .btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.35); }
+    .btn-ghost:hover{ background:rgba(255,255,255,0.08); transform:translateY(-2px); }
+
+    .uc-note{ margin-top:14px; font-size:.95rem; color:#c9d6e2; opacity:.9; }
+
+    @keyframes bob{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-6px) } }
   </style>
 </head>
 <body>
@@ -71,7 +75,7 @@
       <i class="uil uil-times navCloseBtn" aria-label="Menu sluiten"></i>
       <li><a href="3D.html">Home</a></li>
 
-      <!-- Services met submenu (openen via klik in script.js) -->
+      <!-- Services met submenu (open via klik; geregeld in script.js) -->
       <li class="has-submenu">
         <a href="360.html">Services</a>
         <ul class="submenu">
@@ -111,4 +115,48 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-section">
-        <h4 class="footer
+        <h4 class="footer-heading">Snap360-snapwithus360.com</h4>
+        <p class="footer-text">De specialist in innovatieve beeldtechnologie voor vastgoed en architectuur.</p>
+        <div class="social-icons">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-heading">Snelle links</h4>
+        <ul class="footer-links">
+          <li><a href="3D.html" class="footer-link">Home</a></li>
+          <li><a href="360.html" class="footer-link">Services</a></li>
+          <li><a href="fotvi.html" class="footer-link">Referenties</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-heading">Contact</h4>
+        <div class="contact-info">
+          <p class="footer-text"><i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100 Sint-Niklaas</p>
+          <p class="footer-text"><i class="fas fa-phone"></i> +32 476 61 10 99</p>
+          <p class="footer-text"><i class="fas fa-envelope"></i> tom@snapwithus360.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 SNAPWITHUS360.com - DE BACKER LLC. Alle rechten voorbehouden.</p>
+      <div class="legal-links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Centrale nav/submenu script (klik-gedrag) -->
+  <!-- Let op: pad moet kloppen met waar je script.js staat. 
+       Staat hij in de hoofdmap? Laat dit dan zo. -->
+  <script src="script.js" defer></script>
+</body>
+</html>
