@@ -3,50 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Snapwithus360.com DE BACKER LLC</title>
+  <title>Snapwithus360.com — DE BACKER LLC</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="CSS/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+  <!-- Leaflet (map CSS) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 </head>
 <body>
+  <!-- HEADER / NAV -->
   <header>
     <nav class="nav">
-      <i class="uil uil-bars navOpenBtn"></i>
-      <a href="3D.html" class="logo">
-        <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image" />
-      </a>
-      <ul class="nav-links">
-        <i class="uil uil-times navCloseBtn"></i>
-        <li><a href="3D.html">Home</a></li>
+      <i class="uil uil-bars navOpenBtn" aria-label="Menu openen"></i>
 
-        <!-- Services met submenu -->
-        <li class="has-submenu">
-          <a href="360.html">Services</a>
-          <ul class="submenu">
-            <li><a href="under-construction.html">Photography</a></li>
-            <li><a href="under-construction.html">Drone foto's &amp; Video's</a></li>
-            <li><a href="3d-scans.html">3D Matterport</a></li>
-            <li><a href="under-construction.html">Video Tours</a></li>
-            <li><a href="floorplans.html">Vloerplannen</a></li>
-            <li><a href="fpv.html">FPV Aerial Videos</a></li>
+      <a href="3D.html" class="logo" aria-label="Snap360 Home">
+        <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image"/>
+      </a>
+
+      <ul class="nav-links" role="menubar">
+        <i class="uil uil-times navCloseBtn" aria-label="Menu sluiten"></i>
+
+        <li role="none"><a role="menuitem" href="3D.html">Home</a></li>
+
+        <!-- Services met submenu via klik (script.js regelt gedrag) -->
+        <li class="has-submenu" role="none">
+          <a role="menuitem" href="360.html">Services</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a role="menuitem" href="under-construction.html">Photography</a></li>
+            <li role="none"><a role="menuitem" href="under-construction.html">Drone foto's &amp; Video's</a></li>
+            <li role="none"><a role="menuitem" href="3d-scans.html">3D Matterport</a></li>
+            <li role="none"><a role="menuitem" href="under-construction.html">Video Tours</a></li>
+            <li role="none"><a role="menuitem" href="floorplans.html">Vloerplannen</a></li>
+            <li role="none"><a role="menuitem" href="fpv.html">FPV Aerial Videos</a></li>
           </ul>
         </li>
 
-        <li><a href="fotvi.html">Referenties</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li role="none"><a role="menuitem" href="fotvi.html">Referenties</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main>
-    <!-- Hero sectie -->
-    <section class="hero-section">
+    <!-- HERO (video in zwarte balk) -->
+    <section class="hero-section" aria-label="Intro video">
       <video
         class="hero-background"
         autoplay
@@ -57,118 +61,109 @@
         preload="auto"
         poster="Assets/Movies/placeholder.jpg"
       >
-        <source
-          src="Assets/Movies/267A6457-812F-42EC-8ACA-43AB001D1C7F.mp4"
-          type="video/mp4"
-        />
+        <source src="Assets/Movies/267A6457-812F-42EC-8ACA-43AB001D1C7F.mp4" type="video/mp4"/>
         Je browser ondersteunt deze video niet.
       </video>
+      <!-- optioneel: hero-content bovenop de video -->
+      <!--
+      <div class="hero-content">
+        <h1>Welkom bij Snap360</h1>
+        <p>Virtual views, real results!</p>
+        <a href="360.html" class="hero-button">Lees Meer</a>
+      </div>
+      -->
     </section>
 
     <!-- Welkomsectie -->
-<section class="welcome-section">
-  <div class="welcome-content">
-    <h2>Welkom bij Snap360</h2>
-    <p>
-      Ik ben <strong>Tom De Backer</strong>, oprichter van <strong>Snapwithus360.com</strong>. 
-      Jarenlang heb ik mijn ervaring opgebouwd door te werken <strong>voor en samen met anderen</strong>, 
-      zowel in <strong>België</strong> als in de <strong>Verenigde Staten</strong> – 
-      waar ik ook actief ben vanuit <strong>Los Angeles</strong>.
-    </p>
-    <p>
-      Met mijn eigen bedrijf zet ik nu deze expertise in om <strong>vastgoed, bedrijven en evenementen</strong> 
-      op een unieke manier zichtbaar te maken. Van <strong>3D-tours en vloerplannen</strong> tot 
-      <strong>dronebeelden en professionele foto- en videoproducties</strong>: bij Snap360 draait alles 
-      om het creëren van een sterke visuele beleving.
-    </p>
-    <p>
-      Ons doel? <strong>Jouw verhaal krachtig in beeld brengen en een blijvende indruk nalaten.</strong>
-    </p>
-  </div>
-</section>
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <h2>Welkom bij Snap360</h2>
+        <p>
+          Ik ben <strong>Tom De Backer</strong>, oprichter van <strong>Snapwithus360.com</strong>.
+          Jarenlang heb ik mijn ervaring opgebouwd door te werken <strong>voor en samen met anderen</strong>,
+          zowel in <strong>België</strong> als in de <strong>Verenigde Staten</strong> – met activiteiten vanuit <strong>Los Angeles</strong>.
+        </p>
+        <p>
+          Met mijn eigen bedrijf zet ik nu deze expertise in om <strong>vastgoed, bedrijven en evenementen</strong>
+          op een unieke manier zichtbaar te maken. Van <strong>3D-tours en vloerplannen</strong> tot
+          <strong>dronebeelden en professionele foto- en videoproducties</strong>: bij Snap360 draait alles
+          om het creëren van een sterke visuele beleving.
+        </p>
+        <p>
+          Ons doel? <strong>Jouw verhaal krachtig in beeld brengen en een blijvende indruk nalaten.</strong>
+        </p>
+      </div>
+    </section>
 
-    <!-- Drie blokjes -->
+    <!-- Drie blokken (features) -->
     <section class="below-video-section">
       <div class="below-content">
         <div class="square-section">
           <div class="square">
             <div class="square-content">
-              <h3 class="square-title">
-                Creëer Indrukwekkende <br />Virtuele Tours
-              </h3>
+              <h3 class="square-title">Creëer Indrukwekkende <br>Virtuele Tours</h3>
               <p class="square-text">
-                Met de Matterport 3D-scanner kun je vastgoedobjecten vastleggen
-                in gedetailleerde virtuele tours, die klanten in staat stellen
-                om op afstand te verkennen. Dit verhoogt de zichtbaarheid van
-                het vastgoed en biedt een interactieve ervaring.
+                Met de Matterport 3D-scanner kun je vastgoedobjecten vastleggen in gedetailleerde virtuele tours,
+                die klanten in staat stellen om op afstand te verkennen. Dit verhoogt de zichtbaarheid
+                en biedt een interactieve ervaring.
               </p>
-              <a href="360.html" class="read-more">
-                Lees Meer <span>→</span>
-              </a>
+              <a href="360.html" class="read-more">Lees Meer <span>→</span></a>
             </div>
           </div>
+
           <div class="square">
             <div class="square-content">
               <h3 class="square-title">Transformeer Ruimtes in 3D</h3>
               <p class="square-text">
-                Gebruik de Matterport 3D-scanner om realistische 3D-modellen van
-                gebouwen te creëren. Deze modellen kunnen worden gebruikt voor
-                renovaties, architecturale ontwerpen en virtuele producties.
-                <br /><br /><br /><br />
+                Gebruik de Matterport 3D-scanner om realistische 3D-modellen van gebouwen te creëren.
+                Deze modellen kunnen worden gebruikt voor renovaties, architecturale ontwerpen en virtuele producties.
+                <br><br><br><br>
               </p>
-              <a href="360.html" class="read-more">
-                Lees Meer <span>→</span>
-              </a>
+              <a href="360.html" class="read-more">Lees Meer <span>→</span></a>
             </div>
           </div>
+
           <div class="square">
             <div class="square-content">
-              <h3 class="square-title">
-                Efficiënte Inspecties met <br />3D Technologie
-              </h3>
+              <h3 class="square-title">Efficiënte Inspecties met <br>3D Technologie</h3>
               <p class="square-text">
-                De Matterport 3D-scanner maakt het mogelijk om nauwkeurige
-                digitale inspecties van bouwplaatsen of vastgoed te maken. Dit
-                zorgt voor een efficiëntere planning, minimaliseert menselijke
-                fouten en biedt gedetailleerde rapportages. <br /><br />
+                De Matterport 3D-scanner maakt het mogelijk om nauwkeurige digitale inspecties van bouwplaatsen
+                of vastgoed te maken. Dit zorgt voor een efficiëntere planning, minimaliseert fouten
+                en biedt gedetailleerde rapportages. <br><br>
               </p>
-              <a href="360.html" class="read-more">
-                Lees Meer <span>→</span>
-              </a>
+              <a href="360.html" class="read-more">Lees Meer <span>→</span></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Video sectie -->
+    <!-- Video-frame sectie -->
     <section class="video-frame-section">
       <div class="video-frame-container">
         <div class="video-content">
-          <h2>
-            Ontdek de kracht van Matterport’s AI en digitale tweelingen voor
-            jouw ruimte.
-          </h2>
+          <h2>Ontdek de kracht van Matterport’s AI en digitale tweelingen voor jouw ruimte.</h2>
           <p>
-            Met de geavanceerde Matterport technologie transformeer ik jouw
-            eigendom in een digitale tweeling... <br /><br />
+            Met de geavanceerde Matterport technologie transformeer ik jouw eigendom in een digitale tweeling...
+            <br><br>
           </p>
           <ul class="feature-list">
             <li><i class="fas fa-check-circle"></i> Realistische virtuele tours</li>
             <li><i class="fas fa-check-circle"></i> Precisiemetingen</li>
             <li><i class="fas fa-check-circle"></i> Interactieve ruimteplannen</li>
           </ul>
-          <a href="#" class="cta-button">Ontdek onze oplossingen →</a>
+          <a href="360.html" class="cta-button">Ontdek onze oplossingen →</a>
         </div>
+
         <div class="video-wrapper">
           <video class="feature-video" autoplay loop muted playsinline>
-            <source src="Assets/homepage-ai-3.mp4" type="video/mp4" />
+            <source src="Assets/homepage-ai-3.mp4" type="video/mp4"/>
           </video>
         </div>
       </div>
     </section>
 
-    <!-- Matterport sectie -->
+    <!-- Matterport embed -->
     <section class="matterport-section">
       <div class="matterport-container">
         <div class="matterport-embed">
@@ -185,11 +180,10 @@
         <div class="matterport-content">
           <h2>Interactieve 3D Tour</h2>
           <p>
-            Met een interactieve 3D-tour bied ik je de mogelijkheid om je ruimte
-            op een meeslepende en gedetailleerde manier te verkennen. Of je nu
-            je woning, kantoor of ander type pand wilt presenteren, een
-            interactieve 3D-tour stelt bezoekers in staat om zelf door de
-            ruimte te navigeren, te klikken en te ontdekken.
+            Met een interactieve 3D-tour bied ik je de mogelijkheid om je ruimte op een meeslepende
+            en gedetailleerde manier te verkennen. Of je nu je woning, kantoor of ander type pand wilt
+            presenteren, een interactieve 3D-tour stelt bezoekers in staat om zelf door de ruimte
+            te navigeren, te klikken en te ontdekken.
           </p>
         </div>
       </div>
@@ -231,13 +225,13 @@
           </form>
         </div>
 
-        <div class="contact-map" id="map"></div>
+        <div class="contact-map" id="map" aria-label="Kaart locatie"></div>
 
         <div class="contact-info">
           <div class="info-card">
             <i class="fas fa-map-marker-alt"></i>
             <h3>Ons kantoor</h3>
-            <p>Vijfstraten 163<br />9100 Sint-Niklaas</p>
+            <p>Vijfstraten 163<br>9100 Sint-Niklaas</p>
           </div>
 
           <div class="info-card">
@@ -256,20 +250,19 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-section">
         <h4 class="footer-heading">Snap360-snapwithus360.com</h4>
         <p class="footer-text">
-          De specialist in innovatieve beeldtechnologie voor vastgoed en
-          architectuur.
+          De specialist in innovatieve beeldtechnologie voor vastgoed en architectuur.
         </p>
         <div class="social-icons">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -286,25 +279,15 @@
       <div class="footer-section">
         <h4 class="footer-heading">Contact</h4>
         <div class="contact-info">
-          <p class="footer-text">
-            <i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100
-            Sint-Niklaas
-          </p>
-          <p class="footer-text">
-            <i class="fas fa-phone"></i> +32 476 61 10 99
-          </p>
-          <p class="footer-text">
-            <i class="fas fa-envelope"></i> tom@snapwithus360.com
-          </p>
+          <p class="footer-text"><i class="fas fa-map-marker-alt"></i> Vijfstraten 163, 9100 Sint-Niklaas</p>
+          <p class="footer-text"><i class="fas fa-phone"></i> +32 476 61 10 99</p>
+          <p class="footer-text"><i class="fas fa-envelope"></i> tom@snapwithus360.com</p>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>
-        &copy; 2025 SNAPWITHUS360.com - DE BACKER LLC. Alle rechten
-        voorbehouden.
-      </p>
+      <p>&copy; 2025 SNAPWITHUS360.com - DE BACKER LLC. Alle rechten voorbehouden.</p>
       <div class="legal-links">
         <a href="#">Privacybeleid</a>
         <a href="#">Algemene voorwaarden</a>
@@ -312,75 +295,42 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
+  <!-- Leaflet JS (map) -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
-    var map = L.map("map").setView([51.178346, 4.154797], 15);
+    const map = L.map("map").setView([51.178346, 4.154797], 15);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors",
     }).addTo(map);
-    L.marker([51.178346, 4.154797])
-      .addTo(map)
+    L.marker([51.178346, 4.154797]).addTo(map)
       .bindPopup("Snap360 - Elektro Vlaanderen<br>Vijfstraten 163")
       .openPopup();
   </script>
 
-  <script>
-    const nav = document.querySelector(".nav");
-    const navOpenBtn = document.querySelector(".navOpenBtn");
-    const navCloseBtn = document.querySelector(".navCloseBtn");
-
-    navOpenBtn.addEventListener("click", () => {
-      nav.classList.add("openNav");
-      nav.classList.remove("openSearch");
-    });
-
-    navCloseBtn.addEventListener("click", () => {
-      nav.classList.remove("openNav");
-    });
-
-    window.addEventListener("scroll", () => {
-      if (nav.classList.contains("openNav")) {
-        nav.classList.remove("openNav");
-      }
-    });
-  </script>
-
+  <!-- Hero video autoplay fix (iOS/vlaggen) -->
   <script>
     (function () {
       const v = document.querySelector(".hero-background");
       if (!v) return;
-
       v.muted = true;
       v.setAttribute("muted", "");
       v.setAttribute("playsinline", "");
       v.setAttribute("webkit-playsinline", "");
-
       const tryPlay = () => v.play().catch(() => {});
-
-      if (
-        document.readyState === "complete" ||
-        document.readyState === "interactive"
-      ) {
+      if (document.readyState === "complete" || document.readyState === "interactive") {
         tryPlay();
       } else {
         document.addEventListener("DOMContentLoaded", tryPlay, { once: true });
       }
-
-      window.addEventListener("touchstart", tryPlay, {
-        once: true,
-        passive: true,
-      });
+      window.addEventListener("touchstart", tryPlay, { once: true, passive: true });
       document.addEventListener("visibilitychange", () => {
         if (!document.hidden) tryPlay();
       });
     })();
   </script>
+
+  <!-- Centrale navigatie/submenu script (klik-gedrag) -->
+  <script src="Assets/js/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
