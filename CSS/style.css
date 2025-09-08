@@ -512,4 +512,31 @@ a { color: #000; text-decoration: none; }
   .pricing-badge { top: 10px; right: 10px; }
 }
 
+@media (max-width: 768px) {
+  .nav .nav-links { pointer-events: none; }
+  .nav.openNav .nav-links { pointer-events: auto; }
+}
+
+.navOpenBtn,
+.navCloseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  z-index: 1100;
+  -webkit-tap-highlight-color: transparent;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.nav .nav-links .navCloseBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.nav .nav-links .submenu { display: none; }
+.nav .nav-links li.has-submenu.open > .submenu { display: block; }
+
 
