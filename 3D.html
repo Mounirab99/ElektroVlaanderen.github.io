@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snapwithus360.com — DE BACKER LLC</title>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="CSS/style.css" />
+  <!-- Styles (vanaf de site-root laden zodat paden altijd kloppen) -->
+  <link rel="stylesheet" href="/CSS/style.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
@@ -17,32 +17,38 @@
   <!-- HEADER / NAV -->
   <header>
     <nav class="nav">
-      <i class="uil uil-bars navOpenBtn" aria-label="Menu openen"></i>
+      <!-- Hamburger knop (betere touch target op iPhone) -->
+      <button class="navOpenBtn" aria-label="Menu openen" type="button">
+        <i class="uil uil-bars" aria-hidden="true"></i>
+      </button>
 
-      <a href="3D.html" class="logo" aria-label="Snap360 Home">
-        <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image"/>
+      <a href="/3D.html" class="logo" aria-label="Snap360 Home">
+        <img src="/Assets/logo.png" alt="Snap360 logo" class="logo-image"/>
       </a>
 
       <ul class="nav-links" role="menubar">
-        <i class="uil uil-times navCloseBtn" aria-label="Menu sluiten"></i>
+        <!-- Sluitknop in het paneel -->
+        <button class="navCloseBtn" aria-label="Menu sluiten" type="button">
+          <i class="uil uil-times" aria-hidden="true"></i>
+        </button>
 
-        <li role="none"><a role="menuitem" href="3D.html">Home</a></li>
+        <li role="none"><a role="menuitem" href="/3D.html">Home</a></li>
 
         <!-- Services met submenu via klik (script.js regelt gedrag) -->
         <li class="has-submenu" role="none">
-          <a role="menuitem" href="360.html">Services</a>
+          <a role="menuitem" href="/360.html">Services</a>
           <ul class="submenu" role="menu">
-            <li role="none"><a role="menuitem" href="under-construction.html">Photography</a></li>
-            <li role="none"><a role="menuitem" href="under-construction.html">Drone foto's &amp; Video's</a></li>
-            <li role="none"><a role="menuitem" href="3d-scans.html">3D Matterport</a></li>
-            <li role="none"><a role="menuitem" href="under-construction.html">Video Tours</a></li>
-            <li role="none"><a role="menuitem" href="floorplans.html">Vloerplannen</a></li>
-            <li role="none"><a role="menuitem" href="fpv.html">FPV Aerial Videos</a></li>
+            <li role="none"><a role="menuitem" href="/under-construction.html">Photography</a></li>
+            <li role="none"><a role="menuitem" href="/under-construction.html">Drone foto's &amp; Video's</a></li>
+            <li role="none"><a role="menuitem" href="/3d-scans.html">3D Matterport</a></li>
+            <li role="none"><a role="menuitem" href="/under-construction.html">Video Tours</a></li>
+            <li role="none"><a role="menuitem" href="/floorplans.html">Vloerplannen</a></li>
+            <li role="none"><a role="menuitem" href="/fpv.html">FPV Aerial Videos</a></li>
           </ul>
         </li>
 
-        <li role="none"><a role="menuitem" href="fotvi.html">Referenties</a></li>
-        <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+        <li role="none"><a role="menuitem" href="/fotvi.html">Referenties</a></li>
+        <li role="none"><a role="menuitem" href="/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -59,9 +65,9 @@
         playsinline
         webkit-playsinline
         preload="auto"
-        poster="Assets/Movies/placeholder.jpg"
+        poster="/Assets/Movies/placeholder.jpg"
       >
-        <source src="Assets/Movies/267A6457-812F-42EC-8ACA-43AB001D1C7F.mp4" type="video/mp4"/>
+        <source src="/Assets/Movies/267A6457-812F-42EC-8ACA-43AB001D1C7F.mp4" type="video/mp4"/>
         Je browser ondersteunt deze video niet.
       </video>
       <!-- optioneel: hero-content bovenop de video -->
@@ -69,7 +75,7 @@
       <div class="hero-content">
         <h1>Welkom bij Snap360</h1>
         <p>Virtual views, real results!</p>
-        <a href="360.html" class="hero-button">Lees Meer</a>
+        <a href="/360.html" class="hero-button">Lees Meer</a>
       </div>
       -->
     </section>
@@ -107,7 +113,7 @@
                 die klanten in staat stellen om op afstand te verkennen. Dit verhoogt de zichtbaarheid
                 en biedt een interactieve ervaring.
               </p>
-              <a href="360.html" class="read-more">Lees Meer <span>→</span></a>
+              <a href="/360.html" class="read-more">Lees Meer <span>→</span></a>
             </div>
           </div>
 
@@ -119,7 +125,7 @@
                 Deze modellen kunnen worden gebruikt voor renovaties, architecturale ontwerpen en virtuele producties.
                 <br><br><br><br>
               </p>
-              <a href="360.html" class="read-more">Lees Meer <span>→</span></a>
+              <a href="/360.html" class="read-more">Lees Meer <span>→</span></a>
             </div>
           </div>
 
@@ -131,7 +137,7 @@
                 of vastgoed te maken. Dit zorgt voor een efficiëntere planning, minimaliseert fouten
                 en biedt gedetailleerde rapportages. <br><br>
               </p>
-              <a href="360.html" class="read-more">Lees Meer <span>→</span></a>
+              <a href="/360.html" class="read-more">Lees Meer <span>→</span></a>
             </div>
           </div>
         </div>
@@ -152,12 +158,12 @@
             <li><i class="fas fa-check-circle"></i> Precisiemetingen</li>
             <li><i class="fas fa-check-circle"></i> Interactieve ruimteplannen</li>
           </ul>
-          <a href="360.html" class="cta-button">Ontdek onze oplossingen →</a>
+          <a href="/360.html" class="cta-button">Ontdek onze oplossingen →</a>
         </div>
 
         <div class="video-wrapper">
           <video class="feature-video" autoplay loop muted playsinline>
-            <source src="Assets/homepage-ai-3.mp4" type="video/mp4"/>
+            <source src="/Assets/homepage-ai-3.mp4" type="video/mp4"/>
           </video>
         </div>
       </div>
@@ -234,7 +240,7 @@
             <p>Vijfstraten 163<br>9100 Sint-Niklaas</p>
           </div>
 
-          <div class="info-card">
+        <div class="info-card">
             <i class="fas fa-phone"></i>
             <h3>Telefoon</h3>
             <p>+32 476 61 10 99</p>
@@ -269,10 +275,10 @@
       <div class="footer-section">
         <h4 class="footer-heading">Snelle links</h4>
         <ul class="footer-links">
-          <li><a href="3D.html" class="footer-link">Home</a></li>
-          <li><a href="360.html" class="footer-link">Services</a></li>
-          <li><a href="fotvi.html" class="footer-link">Referenties</a></li>
-          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/3D.html" class="footer-link">Home</a></li>
+          <li><a href="/360.html" class="footer-link">Services</a></li>
+          <li><a href="/fotvi.html" class="footer-link">Referenties</a></li>
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
 
@@ -308,7 +314,7 @@
       .openPopup();
   </script>
 
-  <!-- Hero video autoplay fix (iOS/vlaggen) -->
+  <!-- Hero video autoplay fix (iOS) -->
   <script>
     (function () {
       const v = document.querySelector(".hero-background");
@@ -330,9 +336,7 @@
     })();
   </script>
 
-  <!-- Centrale navigatie/submenu script (klik-gedrag) -->
+  <!-- Centrale navigatie/submenu script (JOUW script.js in de root) -->
   <script src="/script.js"></script>
 </body>
 </html>
-
-
