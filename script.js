@@ -1,83 +1,129 @@
-const nav = document.querySelector(".nav"),
-  searchIcon = document.querySelector("#searchIcon"),
-  navOpenBtn = document.querySelector(".navOpenBtn"),
-  navCloseBtn = document.querySelector(".navCloseBtn");
+/* ========================================
+   SNAP360 - Navigatie & Submenu via klik
+   ======================================== */
 
-// --- Zoeken ---
-if (searchIcon) {
+// Basis selectors (safe als elementen ontbreken)
+const nav         = document.querySelector(".nav");
+const navOpenBtn  = document.querySelector(".navOpenBtn");
+const navCloseBtn = document.querySelector(".navCloseBtn");
+const searchIcon  = document.querySelector("#searchIcon");
+
+/* -------------------------
+   Zoeken (optioneel)
+-------------------------- */
+if (searchIcon && nav) {
   searchIcon.addEventListener("click", () => {
     nav.classList.toggle("openSearch");
     nav.classList.remove("openNav");
     if (nav.classList.contains("openSearch")) {
-      return searchIcon.classList.replace("uil-search", "uil-times");
-    }
-    searchIcon.classList.replace("uil-times", "uil-search");
-  });
-}
-
-// --- Mobiel menu open/dicht ---
-if (navOpenBtn) {
-  navOpenBtn.addEventListener("click", () => {
-    nav.classList.add("openNav");
-    nav.classList.remove("openSearch");
-    if (searchIcon) {
+      searchIcon.classList.replace("uil-search", "uil-times");
+    } else {
       searchIcon.classList.replace("uil-times", "uil-search");
     }
   });
 }
 
-if (navCloseBtn) {
-  navCloseBtn.addEventListener("click", () => {
-    nav.classList.remove("openNav");
+/* -------------------------
+   Hamburger open/dicht
+-------------------------- */
+if (navOpenBtn && nav) {
+  navOpenBtn.addEventListener("click", () => {
+    nav.classList.add("openNav");
+    nav.classList.remove("openSearch");
+    if (searchIcon) searchIcon.classList.replace("uil-times", "uil-search");
   });
 }
 
-// --- Submenu fix (iPhone/mobiel) ---
-(function () {
-  const parents = document.querySelectorAll(".nav .has-submenu");
-  const anchors = document.querySelectorAll(".nav .has-submenu > a");
+if (navCloseBtn && nav) {
+  navCloseBtn.addEventListener("click", () => {
+    nav.classList.remove("openNav");
+    closeAllSubmenus();
+  });
+}
 
-  const isMobileLike = () =>
-    window.matchMedia("(max-width: 768px)").matches ||
-    window.matchMedia("(pointer: coarse)").matches ||
-    nav.classList.contains("openNav");
-
-  function closeAll() {
-    parents.forEach((p) => p.classList.remove("open"));
+// Sluit het mobiele menu (en submenu’s) bij scroll – voorkomt “vastgeplakt” menu
+window.addEventListener("scroll", () => {
+  if (!nav) return;
+  if (nav.classList.contains("openNav")) {
+    nav.classList.remove("openNav");
+    closeAllSubmenus();
   }
+});
 
-  anchors.forEach((a) => {
-    a.addEventListener("click", function (e) {
-      if (!isMobileLike()) return; // Desktop = gewoon link volgen
+// Reset states bij resize naar desktop
+let resizeTO;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTO);
+  resizeTO = setTimeout(() => {
+    if (!nav) return;
+    // Sluit open states bij layout switch
+    nav.classList.remove("openNav", "openSearch");
+    closeAllSubmenus();
+  }, 150);
+});
 
-      const li = this.parentElement;
-      const alreadyOpen = li.classList.contains("open");
+/* -------------------------
+   Submenu via klik (mobiel + desktop)
+-------------------------- */
+const submenuParents = document.querySelectorAll(".nav .has-submenu");
+const submenuAnchors = document.querySelectorAll(".nav .has-submenu > a");
 
-      if (!alreadyOpen) {
-        e.preventDefault(); // Voorkomt direct navigeren
-        closeAll();
-        li.classList.add("open"); // Open submenu
-      }
-      // Als al open => tweede klik gaat gewoon naar de pagina
-    });
+// helpers
+function closeAllSubmenus(except) {
+  submenuParents.forEach((p) => {
+    if (p !== except) {
+      p.classList.remove("open");
+      const a = p.querySelector(":scope > a");
+      if (a) a.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+submenuAnchors.forEach((anchor) => {
+  // toegankelijkheid & pijltje-rotatie via CSS [aria-expanded="true"]
+  anchor.setAttribute("role", "button");
+  anchor.setAttribute("aria-expanded", "false");
+
+  anchor.addEventListener("click", (e) => {
+    const li = anchor.parentElement;
+    const href = anchor.getAttribute("href") || "#";
+    const isHash = href === "#" || href === "";
+
+    // 1e klik => openen + navigatie blokkeren
+    if (!li.classList.contains("open")) {
+      e.preventDefault();
+      closeAllSubmenus(li);
+      li.classList.add("open");
+      anchor.setAttribute("aria-expanded", "true");
+      return;
+    }
+
+    // 2e klik: als href "#" -> sluiten (niet navigeren)
+    if (li.classList.contains("open") && isHash) {
+      e.preventDefault();
+      li.classList.remove("open");
+      anchor.setAttribute("aria-expanded", "false");
+      return;
+    }
+
+    // 2e klik met echte URL -> laat navigeren
   });
 
-  // Klik buiten menu sluit submenu's
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".nav")) closeAll();
+  // Keyboard support (Enter/Space)
+  anchor.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      anchor.click();
+    }
   });
+});
 
-  // Escape sluit submenu's
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeAll();
-  });
+// Klik buiten nav => submenu’s dicht
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".nav")) closeAllSubmenus();
+});
 
-  // Reset bij resize naar desktop
-  let resizeTO;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTO);
-    resizeTO = setTimeout(() => {
-      if (!isMobileLike()) closeAll();
-    }, 150);
-  });
-})();
+// Escape => submenu’s dicht
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeAllSubmenus();
+});
