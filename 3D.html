@@ -5,24 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snapwithus360.com DE BACKER LLC</title>
   <link rel="stylesheet" href="CSS/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 <body>
   <header>
     <nav class="nav">
-      <i class="uil uil-bars navOpenBtn"></i>
+      <!-- FIX: maak van de hamburger een echte knop -->
+      <button class="navOpenBtn" aria-label="Menu openen" type="button">
+        <i class="uil uil-bars" aria-hidden="true"></i>
+      </button>
+
       <a href="3D.html" class="logo">
         <img src="Assets/logo.png" alt="Snap360 logo" class="logo-image" />
       </a>
+
       <ul class="nav-links">
-        <i class="uil uil-times navCloseBtn"></i>
+        <!-- FIX: ook de sluitknop als button -->
+        <button class="navCloseBtn" aria-label="Menu sluiten" type="button">
+          <i class="uil uil-times" aria-hidden="true"></i>
+        </button>
+
         <li><a href="3D.html">Home</a></li>
 
         <!-- Services met submenu -->
@@ -66,26 +69,26 @@
     </section>
 
     <!-- Welkomsectie -->
-<section class="welcome-section">
-  <div class="welcome-content">
-    <h2>Welkom bij Snap360</h2>
-    <p>
-      Ik ben <strong>Tom De Backer</strong>, oprichter van <strong>Snapwithus360.com</strong>. 
-      Jarenlang heb ik mijn ervaring opgebouwd door te werken <strong>voor en samen met anderen</strong>, 
-      zowel in <strong>België</strong> als in de <strong>Verenigde Staten</strong> – 
-      waar ik ook actief ben vanuit <strong>Los Angeles</strong>.
-    </p>
-    <p>
-      Met mijn eigen bedrijf zet ik nu deze expertise in om <strong>vastgoed, bedrijven en evenementen</strong> 
-      op een unieke manier zichtbaar te maken. Van <strong>3D-tours en vloerplannen</strong> tot 
-      <strong>dronebeelden en professionele foto- en videoproducties</strong>: bij Snap360 draait alles 
-      om het creëren van een sterke visuele beleving.
-    </p>
-    <p>
-      Ons doel? <strong>Jouw verhaal krachtig in beeld brengen en een blijvende indruk nalaten.</strong>
-    </p>
-  </div>
-</section>
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <h2>Welkom bij Snap360</h2>
+        <p>
+          Ik ben <strong>Tom De Backer</strong>, oprichter van <strong>Snapwithus360.com</strong>. 
+          Jarenlang heb ik mijn ervaring opgebouwd door te werken <strong>voor en samen met anderen</strong>, 
+          zowel in <strong>België</strong> als in de <strong>Verenigde Staten</strong> – 
+          waar ik ook actief ben vanuit <strong>Los Angeles</strong>.
+        </p>
+        <p>
+          Met mijn eigen bedrijf zet ik nu deze expertise in om <strong>vastgoed, bedrijven en evenementen</strong> 
+          op een unieke manier zichtbaar te maken. Van <strong>3D-tours en vloerplannen</strong> tot 
+          <strong>dronebeelden en professionele foto- en videoproducties</strong>: bij Snap360 draait alles 
+          om het creëren van een sterke visuele beleving.
+        </p>
+        <p>
+          Ons doel? <strong>Jouw verhaal krachtig in beeld brengen en een blijvende indruk nalaten.</strong>
+        </p>
+      </div>
+    </section>
 
     <!-- Drie blokjes -->
     <section class="below-video-section">
@@ -312,7 +315,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts (Leaflet kaart) -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
     var map = L.map("map").setView([51.178346, 4.154797], 15);
@@ -325,27 +328,7 @@
       .openPopup();
   </script>
 
-  <script>
-    const nav = document.querySelector(".nav");
-    const navOpenBtn = document.querySelector(".navOpenBtn");
-    const navCloseBtn = document.querySelector(".navCloseBtn");
-
-    navOpenBtn.addEventListener("click", () => {
-      nav.classList.add("openNav");
-      nav.classList.remove("openSearch");
-    });
-
-    navCloseBtn.addEventListener("click", () => {
-      nav.classList.remove("openNav");
-    });
-
-    window.addEventListener("scroll", () => {
-      if (nav.classList.contains("openNav")) {
-        nav.classList.remove("openNav");
-      }
-    });
-  </script>
-
+  <!-- iOS video autoplay helpers -->
   <script>
     (function () {
       const v = document.querySelector(".hero-background");
@@ -358,10 +341,7 @@
 
       const tryPlay = () => v.play().catch(() => {});
 
-      if (
-        document.readyState === "complete" ||
-        document.readyState === "interactive"
-      ) {
+      if (document.readyState === "complete" || document.readyState === "interactive") {
         tryPlay();
       } else {
         document.addEventListener("DOMContentLoaded", tryPlay, { once: true });
@@ -371,15 +351,14 @@
         once: true,
         passive: true,
       });
+
       document.addEventListener("visibilitychange", () => {
         if (!document.hidden) tryPlay();
       });
     })();
   </script>
+
+  <!-- Belangrijk: jouw centrale nav/submenu script in de root -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
