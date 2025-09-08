@@ -1,100 +1,83 @@
-// SNAP360 - super simpele nav + submenu (klik)
+const nav = document.querySelector(".nav"),
+  searchIcon = document.querySelector("#searchIcon"),
+  navOpenBtn = document.querySelector(".navOpenBtn"),
+  navCloseBtn = document.querySelector(".navCloseBtn");
 
-// Wacht tot de DOM klaar is (voorkomt null errors)
-document.addEventListener('DOMContentLoaded', () => {
-  const nav         = document.querySelector('.nav');
-  const navOpenBtn  = document.querySelector('.navOpenBtn');
-  const navCloseBtn = document.querySelector('.navCloseBtn');
+// --- Zoeken ---
+if (searchIcon) {
+  searchIcon.addEventListener("click", () => {
+    nav.classList.toggle("openSearch");
+    nav.classList.remove("openNav");
+    if (nav.classList.contains("openSearch")) {
+      return searchIcon.classList.replace("uil-search", "uil-times");
+    }
+    searchIcon.classList.replace("uil-times", "uil-search");
+  });
+}
 
-  if (!nav || !navOpenBtn || !navCloseBtn) {
-    // Als één van de elementen mist, doe niets (voorkomt crashes)
-    return;
+// --- Mobiel menu open/dicht ---
+if (navOpenBtn) {
+  navOpenBtn.addEventListener("click", () => {
+    nav.classList.add("openNav");
+    nav.classList.remove("openSearch");
+    if (searchIcon) {
+      searchIcon.classList.replace("uil-times", "uil-search");
+    }
+  });
+}
+
+if (navCloseBtn) {
+  navCloseBtn.addEventListener("click", () => {
+    nav.classList.remove("openNav");
+  });
+}
+
+// --- Submenu fix (iPhone/mobiel) ---
+(function () {
+  const parents = document.querySelectorAll(".nav .has-submenu");
+  const anchors = document.querySelectorAll(".nav .has-submenu > a");
+
+  const isMobileLike = () =>
+    window.matchMedia("(max-width: 768px)").matches ||
+    window.matchMedia("(pointer: coarse)").matches ||
+    nav.classList.contains("openNav");
+
+  function closeAll() {
+    parents.forEach((p) => p.classList.remove("open"));
   }
 
-  // ---- Helper: alle submenu's dicht ----
-  const closeAllSubmenus = (except = null) => {
-    document.querySelectorAll('.nav .has-submenu').forEach(li => {
-      if (li !== except) {
-        li.classList.remove('open');
-        const a = li.querySelector(':scope > a');
-        if (a) a.setAttribute('aria-expanded', 'false');
+  anchors.forEach((a) => {
+    a.addEventListener("click", function (e) {
+      if (!isMobileLike()) return; // Desktop = gewoon link volgen
+
+      const li = this.parentElement;
+      const alreadyOpen = li.classList.contains("open");
+
+      if (!alreadyOpen) {
+        e.preventDefault(); // Voorkomt direct navigeren
+        closeAll();
+        li.classList.add("open"); // Open submenu
       }
-    });
-  };
-
-  // ---- Hamburger open/dicht ----
-  navOpenBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    nav.classList.add('openNav');
-    closeAllSubmenus();
-  });
-
-  navCloseBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    nav.classList.remove('openNav');
-    closeAllSubmenus();
-  });
-
-  // Veiligheid: als je scrolt, dicht
-  window.addEventListener('scroll', () => {
-    if (nav.classList.contains('openNav')) {
-      nav.classList.remove('openNav');
-      closeAllSubmenus();
-    }
-  });
-
-  // ---- Submenu via klik (1e klik open, 2e klik navigeert als het geen # is) ----
-  document.querySelectorAll('.nav .has-submenu > a').forEach(anchor => {
-    anchor.setAttribute('role', 'button');
-    anchor.setAttribute('aria-expanded', 'false');
-
-    anchor.addEventListener('click', (e) => {
-      const li   = anchor.parentElement;
-      const href = anchor.getAttribute('href') || '#';
-      const isHash = href === '#' || href.trim() === '';
-
-      // 1e klik -> open
-      if (!li.classList.contains('open')) {
-        e.preventDefault();
-        closeAllSubmenus(li);
-        li.classList.add('open');
-        anchor.setAttribute('aria-expanded', 'true');
-        return;
-      }
-
-      // 2e klik -> als href '#' is, dan sluiten (niet navigeren)
-      if (isHash) {
-        e.preventDefault();
-        li.classList.remove('open');
-        anchor.setAttribute('aria-expanded', 'false');
-        return;
-      }
-      // Anders: normale navigatie
+      // Als al open => tweede klik gaat gewoon naar de pagina
     });
   });
 
-  // Klik buiten nav -> alles dicht
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav')) {
-      closeAllSubmenus();
-    }
+  // Klik buiten menu sluit submenu's
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav")) closeAll();
   });
 
-  // Escape -> alles dicht
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeAllSubmenus();
-      nav.classList.remove('openNav');
-    }
+  // Escape sluit submenu's
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
   });
 
-  // Bij resize resetten (voorkomt vreemde states)
+  // Reset bij resize naar desktop
   let resizeTO;
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     clearTimeout(resizeTO);
     resizeTO = setTimeout(() => {
-      nav.classList.remove('openNav');
-      closeAllSubmenus();
+      if (!isMobileLike()) closeAll();
     }, 150);
   });
-});
+})();
