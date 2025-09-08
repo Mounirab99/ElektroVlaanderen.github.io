@@ -141,3 +141,44 @@ document.addEventListener("keydown", (e) => {
   display: flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; /* fijne touch target */
 }
+/* iPhone fix: gesloten off-canvas menu mag geen taps blokken */
+@media (max-width: 768px) {
+  .nav .nav-links { pointer-events: none; }
+  .nav.openNav .nav-links { pointer-events: auto; }
+}
+
+/* Maak de open/close knoppen echte touch targets boven alles */
+.navOpenBtn,
+.navCloseBtn {
+  display: flex;                 /* ruim tappable area */
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;     /* Apple HIG min. 44x44 */
+  z-index: 1100;
+  -webkit-tap-highlight-color: transparent;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Zorg dat het sluitknopje rechtsboven in het paneel goed staat */
+.nav .nav-links .navCloseBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+/* Submenu: standaard dicht, open via .open class (JS) */
+.nav .nav-links .submenu {
+  display: none;
+}
+.nav .nav-links li.has-submenu.open > .submenu {
+  display: block;
+}
+
+/* (optioneel) Zet hover-open uit als je 100% klik-gedrag wil */
+@media (hover: hover) and (pointer: fine) {
+  /* comment/laat weg als je hover NIET wilt */
+  /* .nav .nav-links li.has-submenu:hover > .submenu { display: block; } */
+}
+
